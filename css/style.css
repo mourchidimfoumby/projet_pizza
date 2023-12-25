@@ -1,0 +1,85 @@
+/*
+=====================================================
+                        GENERAL
+=====================================================
+*/
+*{
+    padding: 0px;
+    margin: 0px ;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*
+=====================================================
+                        HEADER
+=====================================================
+*/
+
+/*----------TOP HEADER----------*/
+
+header img{
+    padding: 10px;
+}
+#top-header{
+    display: inline-flex;
+    align-items: center;
+}
+/*----------NAVBAR-------------*/
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(30, 30, 30);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 1px 1px 3px lightgrey;
+
+}
+nav li{
+    font-size: 20px;
+    padding-block: 20px;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+}
+nav a{
+    color: white;
+    padding: 20px;
+}
+nav a:hover{
+    background-color: rgb(184, 103, 12);
+    color: white;
+}
+
+/*
+=====================================================
+                        MAIN
+=====================================================
+*/
+
+/*
+=====================================================
+                        FOOTER
+=====================================================
+*/
+footer{
+    background-color: rgb(30, 30, 30);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding-block: 5vh;
+    width: 100%;
+}
