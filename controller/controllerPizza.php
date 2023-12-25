@@ -4,7 +4,7 @@
     
     class controllerPizza extends controllerObjet {
         protected static string $classe = "pizza";
-        protected static string $identifiant ="numPizza";
+        protected static string $identifiant ="id_pizza";
     
     }
 ?>

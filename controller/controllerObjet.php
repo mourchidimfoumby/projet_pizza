@@ -10,10 +10,10 @@ class ControllerObjet{
         $classe = static::$classe;
         $title = ucfirst($classe);
         $tableau = $classe::getAll();
-        include("./view/head.php");
-        include("./view/navbar.html");
-        include("./view/productList.php");
-        include("./view/footer.html");
+        include("view/head.php");
+        include("view/navbar.html");
+        include("view/product_list.php");
+        include("view/footer.html");
     }
 
     // public static function displayOne(){
