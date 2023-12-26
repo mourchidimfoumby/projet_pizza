@@ -18,3 +18,8 @@
 .cart .button-cart:disabled{
     opacity: .4;
 }
+#cart-item{
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-block: 20px;
+}

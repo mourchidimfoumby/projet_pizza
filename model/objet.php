@@ -22,42 +22,42 @@ class objet{
         return $tableau;
     }
     
-    // public static function getOne($id){
-    //     //on récupère le nom de la table
-    //     $classeRecuperee = static::$classe; 
+    public static function getOne($id){
+        //on récupère le nom de la table
+        $classeRecuperee = static::$classe; 
 
-    //     //on récupère le nom de l'identifiant
-    //     $identifiant = static::$identifiant;
+        //on récupère le nom de l'identifiant
+        $identifiant = static::$identifiant;
 
-    //     //on construit la requête préparée avec un tag qui
-    //     //remplace la valeur de l'identifiant
-    //     $requetePreparee = "SELECT * FROM $classeRecuperee WHERE $identifiant = :id_tag;";
+        //on construit la requête préparée avec un tag qui
+        //remplace la valeur de l'identifiant
+        $requetePreparee = "SELECT * FROM $classeRecuperee WHERE $identifiant = :id_tag;";
 
-    //     //on lance la méthode "prepare" et on récupère le résultat
-    //     // (qui n'est pas du tout exploitable puisque le tag n'a pas été remplacé)
-    //     $resultat = connexion::pdo()->prepare($requetePreparee);
+        //on lance la méthode "prepare" et on récupère le résultat
+        // (qui n'est pas du tout exploitable puisque le tag n'a pas été remplacé)
+        $resultat = connexion::pdo()->prepare($requetePreparee);
 
-    //     //on crée le tableau contenant le tag et sa valeur
-    //     $tags = array("id_tag" => $id);
+        //on crée le tableau contenant le tag et sa valeur
+        $tags = array("id_tag" => $id);
 
-    //     try{
-    //         //on éxecute la requête préparée
-    //         $resultat->execute($tags);
+        try{
+            //on éxecute la requête préparée
+            $resultat->execute($tags);
 
-    //         //on interprète le résultat selon la classe récupérée
-    //         $resultat->setFetchMode(PDO::FETCH_CLASS, $classeRecuperee);
+            //on interprète le résultat selon la classe récupérée
+            $resultat->setFetchMode(PDO::FETCH_CLASS, $classeRecuperee);
 
-    //         //on récupère l'élément (le seul du tableau en fait)
-    //         $element = $resultat->fetchAll();
+            //on récupère l'élément (le seul du tableau en fait)
+            $element = $resultat->fetchAll();
 
-    //         //on le retourne
-    //         return $element;
+            //on le retourne
+            return $element;
 
-    //     }
-    //     catch(PDOException $e){
-    //         echo"".$e->getMessage();
-    //     }
-    // }
+        }
+        catch(PDOException $e){
+            echo"".$e->getMessage();
+        }
+    }
 
     // public static function delete($id){
     //      $classeRecuperee = static::$classe; 

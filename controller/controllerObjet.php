@@ -16,6 +16,7 @@ class ControllerObjet{
         include("view/cart.php");
         include("view/footer.html");
     }
+    
 
     // public static function displayOne(){
     //     $classeRecuperee = static::$classe;

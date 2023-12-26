@@ -22,12 +22,15 @@ a{
 }
 h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black !important;
 }
 h2{
     font-size: 1.8rem !important;
+    color: black !important;
 }
 h3{
     font-size: 1.2rem !important;
+    color: black !important;
 }
 p{
     font-size: 1rem !important;
