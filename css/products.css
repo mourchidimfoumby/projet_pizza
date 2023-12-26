@@ -1,0 +1,64 @@
+/*
+=====================================================
+                        PRODUCTS LIST
+=====================================================
+*/
+.product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px;
+    gap: 10px;
+    flex-basis: 60%;
+    flex-grow: 1;
+}
+
+.product-cards{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    flex-basis: 20%;
+    flex-grow: 1;
+    transition: .3s ease;
+    background-color: white;
+    z-index: 0;
+}
+.product-cards:hover{
+    box-shadow: 0 2px 5px -1px rgba(0,0,0,.6);
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.product-cards img{
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1.2px solid lightgrey;
+}
+#text-parts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    flex-grow: 1;
+}
+
+.button-cart{
+    background-color: rgb(17, 104, 17);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.button-cart:hover{
+    background-color: rgb(15, 82, 15);
+}
+.text-center{
+    flex-grow: 1;
+    text-align: center;
+}

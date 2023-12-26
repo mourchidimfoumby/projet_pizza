@@ -3,7 +3,12 @@
                         HEADER
 =====================================================
 */
-/*----------TOP HEADER-------------*/
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
 header img{
     padding: 10px;
 }
@@ -17,9 +22,6 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(30, 30, 30);
-    position: sticky;
-    top: 0;
-    z-index: 100;
     box-shadow: 1px 1px 3px grey;
 }
 nav li{

@@ -24,20 +24,20 @@ class pizza extends objet{
         }
     }
 
-    public static function getListeIngredient($id){
-        $requete = "";
-        $requete .= "SELECT nom_ingredient FROM pizza ";
-        $requete .= "NATURAL JOIN ingredient_pizza ";
-        $requete .= "NATURAL JOIN ingredient ";
-        $requete .= "WHERE id_pizza = $id";
-        $resultat = connexion::pdo()->prepare($requete);
+    public static function getIngredientList($id){
+        $request = "";
+        $request .= "SELECT nom_ingredient FROM pizza ";
+        $request .= "NATURAL JOIN ingredient_pizza ";
+        $request .= "NATURAL JOIN ingredient ";
+        $request .= "WHERE id_pizza = $id";
+        $result = connexion::pdo()->prepare($request);
         try{
-            $resultat->execute();
-            return $resultat->fetchAll(PDO::FETCH_COLUMN);
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_COLUMN);
         }
         catch(PDOException $e){
             echo $e->getMessage();
-            echo $requete;
+            echo $request;
         }
     }
     public function __toString(): string{

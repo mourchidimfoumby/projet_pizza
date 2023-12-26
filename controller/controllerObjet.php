@@ -9,10 +9,11 @@ class ControllerObjet{
     public static function displayAll(){
         $classe = static::$classe;
         $title = ucfirst($classe);
-        $tableau = $classe::getAll();
+        $objects = $classe::getAll();
         include("view/head.php");
         include("view/navbar.html");
-        include("view/product_list.php");
+        include("view/products.php");
+        include("view/cart.php");
         include("view/footer.html");
     }
 

@@ -23,3 +23,13 @@ a{
 h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+h2{
+    font-size: 1.8rem !important;
+}
+h3{
+    font-size: 1.2rem !important;
+}
+p{
+    font-size: 1rem !important;
+    color: #6b6e79;
+}
