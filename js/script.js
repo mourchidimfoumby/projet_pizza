@@ -6,19 +6,20 @@ $(function () {
 =====================================================
 */
 function addToCart(){
+
     $($.ajax({
         type: "POST",
-        url: "controller/treatment.php",
+        url: "controller/treatment_cart.php",
         data: {
-            ajax: true,
-            action: 'getObjet'
+            action: 'sayHello',
+            message: 'Hello'
         },
         dataType: "json",
         success: function (response) {
-            console.log(response);
+            $("h3").text(response.message);
         },
         error: function(error){
-            console.error(error);
+            $("h3").text(error.message);
         }
     }));
 }

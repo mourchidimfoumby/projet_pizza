@@ -23,3 +23,22 @@
     overflow-y: auto;
     margin-block: 20px;
 }
+#cart-item::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  #cart-item::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  #cart-item::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  #cart-item::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

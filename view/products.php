@@ -9,7 +9,7 @@ $classe =  static::$classe;
             $i++;
         foreach ($objects as $object) {
             $id = $object->get("id_$classe");
-            echo '<a href="index.php?objet='.$classe.'?id='.$id.'">';
+            echo '<a href="#">';
             echo '<div class="product-cards">';
             echo '<img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2023%2F02%2F20%2F6776_Pizza-Dough_ddmfs_4x3_1724.jpg&q=60&c=sc&orient=true&poi=auto&h=512">';
             echo '<div id="text-parts">';
