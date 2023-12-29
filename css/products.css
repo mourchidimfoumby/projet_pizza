@@ -16,20 +16,19 @@
 .product a{
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
-    border: 1px solid lightgrey;
     flex-basis: 20%;
     flex-grow: 1;
     transition: .3s ease;
     background-color: white;
+    border-radius: 5px;
     z-index: 0;
+    border: 1px solid rgb(201, 201, 201);
 }
-
-.product-cards:hover{
+.product a:hover{
     box-shadow: 0 2px 5px -1px rgba(0,0,0,.6);
     transform: scale(1.02);
 }
-.product-cards img{
+.product img{
     width: 100%;
     object-fit: cover;
     border-top-left-radius: 5px;
@@ -60,4 +59,7 @@
 .text-center{
     flex-grow: 1;
     text-align: center;
+}
+.text-end{
+    text-align: end;
 }

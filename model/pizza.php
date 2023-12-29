@@ -11,16 +11,20 @@ class pizza extends objet{
     protected $id_pizza;
     protected $nom_pizza;
     protected $prix_pizza;
+    protected $pizza_du_moment;
 
     public function __construct(
         $id_pizza = NULL,
         $nom_pizza = NULL,
         $prix_pizza = NULL,
+        $pizza_du_moment = NULL
     ){
-        if(!is_null($id_pizza)){
+        if(!is_null($id_pizza))
+        {
             $this->id_pizza = $id_pizza;
             $this->nom_pizza = $nom_pizza;
             $this->prix_pizza = $prix_pizza;
+            $this->pizza_du_moment = $pizza_du_moment;
         }
     }
 

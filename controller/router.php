@@ -1,4 +1,5 @@
 <?php
+
 //valeur par défaut de l'objet
 $objet = "pizza";
 //les objets possibles
