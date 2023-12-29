@@ -10,10 +10,11 @@ $(function () {
     let id = params.get('id');
     let parameters = {
         'objet': objet,
-        'id': id,
     };
 
-    function addToCart() {
+    function addToCart(event, element) {
+        event.preventDefault();
+        parameters.id = $(element).data("id");
         $.ajax({
             type: "POST",
             url: "controller/treatment_cart.php",
@@ -32,7 +33,8 @@ $(function () {
         });
     }
 
-    function removeToCart(element) {
+    function removeToCart(event, element) {
+        event.preventDefault()
         parameters.position = $(element).data("position");
         $.ajax({
             type: "POST",
@@ -68,10 +70,12 @@ $(function () {
         });
     }
 
-    $(".product-cards").on("click", addToCart);
-    $(".bi-x-circle").on("click", function(){
+    $(".product-cards").on("click", function(event){
+        addToCart(event, this)
+    });
+    $(".bi-x-circle").on("click", function(event){
         console.log($(this).data("position"));
-        removeToCart(this);
+        removeToCart(event,this);
     });
     $("#btn").on("click", clearSession);
 });
