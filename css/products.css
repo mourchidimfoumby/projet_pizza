@@ -3,7 +3,7 @@
                         PRODUCTS LIST
 =====================================================
 */
-.product{
+.product-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -13,7 +13,7 @@
     flex-basis: 60%;
     flex-grow: 1;
 }
-.product-cards{
+.product{
     display: flex;
     flex-direction: column;
     flex-basis: 20%;
@@ -25,7 +25,7 @@
     border: 1px solid rgb(201, 201, 201);
     cursor: pointer;
 }
-.product-cards:hover{
+.product:hover{
     box-shadow: 0 2px 5px -1px rgba(0,0,0,.6);
     transform: scale(1.02);
 }

@@ -11,6 +11,8 @@ $(function () {
     let parameters = {
         'objet': objet,
     };
+    let element;
+    let myevent;
 
     function addToCart(event, element) {
         event.preventDefault();
@@ -54,28 +56,49 @@ $(function () {
         });
     }
 
-
-    function clearSession(){
-        $.ajax({
-            type: "POST",
-            url: "controller/clear.php",
-            dataType: "json",
-        })
-        .done(function(response) {
-            console.log('Réponse du serveur :', response);
-            location.reload();
-        })
-        .fail(function(xhr, status, error) {
-            console.error('Erreur AJAX (statut ' + status + ') :', xhr.responseText);
-        });
+    function showPopup(){
+        $("#app-container").css("pointer-events", "none");
+        $("body").css("overflow", "hidden")
+        $("#overlay").fadeIn();
+        $(".popup").fadeIn();
+    }
+    function closePopup(){
+        $("#app-container").css("pointer-events", "all");
+        $("body").css("overflow", "auto")
+        $(".popup").fadeOut();
+        $("#overlay").fadeOut();
     }
 
-    $(".product-cards").on("click", function(event){
-        addToCart(event, this)
+    $(".product").on("click", function(event){
+        element = this;
+        myevent = event;
+        showPopup();
     });
+
     $(".bi-x-circle").on("click", function(event){
-        console.log($(this).data("position"));
         removeToCart(event,this);
     });
-    $("#btn").on("click", clearSession);
+    
+    $("#btn-popup-add").on("click", function() {
+        closePopup();
+        addToCart(myevent, element)
+    });
+    $("#btn-popup-cancel").on("click", closePopup);
+
 });
+
+// function clearSession(){
+//     $.ajax({
+//         type: "POST",
+//         url: "controller/clear.php",
+//         dataType: "json",
+//     })
+//     .done(function(response) {
+//         console.log('Réponse du serveur :', response);
+//         location.reload();
+//     })
+//     .fail(function(xhr, status, error) {
+//         console.error('Erreur AJAX (statut ' + status + ') :', xhr.responseText);
+//     });
+// }
+// $("#btn").on("click", clearSession);

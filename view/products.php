@@ -1,7 +1,7 @@
 <?php
 $classe =  static::$classe;
 ?>
-<section class="product">
+<section class="product-container">
     <?php
     if ($objects != null) {
         $i = 0;
@@ -10,7 +10,7 @@ $classe =  static::$classe;
         foreach ($objects as $object) {
             $id = $object->get("id_$classe");
             $nom = $_GET["objet"];
-            echo '<div class="product-cards" data-id="'.$id.'">';
+            echo '<div class="product" data-id="'.$id.'">';
             echo '<img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2023%2F02%2F20%2F6776_Pizza-Dough_ddmfs_4x3_1724.jpg&q=60&c=sc&orient=true&poi=auto&h=512">';
             echo '<div id="text-parts">';
             echo '<h3>' .$object. '</h3>';
