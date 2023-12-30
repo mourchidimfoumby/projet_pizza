@@ -43,12 +43,8 @@ class objet{
         try{
             //on éxecute la requête préparée
             $resultat->execute($tags);
-
-            //on interprète le résultat selon la classe récupérée
-            $resultat->setFetchMode(PDO::FETCH_CLASS, $classeRecuperee);
-
-            //on récupère l'élément (le seul du tableau en fait)
-            $element = $resultat->fetchAll();
+            
+            $element = $resultat->fetchObject($classeRecuperee);
 
             //on le retourne
             return $element;

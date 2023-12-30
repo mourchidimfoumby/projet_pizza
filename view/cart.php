@@ -1,36 +1,25 @@
 <?php
 
     function displayCart(){
-        if(isset($_SESSION["cart"])){
             $cart = $_SESSION["cart"];
             $totalPrice = 0;
             $i = 0;
             echo '<div id="cart">';
-            foreach($cart as $c){
-                $i++;
-                echo '<div id="cart-item">';
-                echo '<p><span>'. $c["name"].'</span> <span>'.$c["price"].' €</span></p>';
-                echo '<span class="bi bi-x-circle" data-position="'.$i.'"></span>';
-                echo '</div>';
+                foreach($cart as $c){
+                    $i++;
+                    echo '<div id="cart-item">';
+                        echo '<p><span>'. $c["name"].'</span> <span>'.$c["price"].' €</span></p>';
+                        echo '<span class="bi bi-x-circle" data-position="'.$i.'"></span>';
+                    echo '</div>';
                 $totalPrice += $c["price"];
             }
             echo '
                 </div>
                 <button class="button-cart">
-                <span class="text-center">Commander</span>
-                <span class="text-end">'.number_format($totalPrice, 2).' €</span>
+                    <span class="text-center">Commander</span>
+                    <span class="text-end">'.number_format($totalPrice, 2).' €</span>
                 </button>';
            
-        }
-        else
-        {
-            echo '<div id="cart">
-                <p id="p-center"> Votre panier est vide </p>
-                </div>
-                <button class="button-cart" disabled> 
-                <span class="text-center">Commander</span> 
-                </button>';
-        }
     }
 ?>
 <?php

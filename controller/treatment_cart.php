@@ -52,15 +52,13 @@ function addToCart(){
         $parameters = $_POST["parameters"];
         $classe = $parameters["objet"];
         $id = $parameters["id"];
-        $objects = $classe::getOne($id);
+        $object = $classe::getOne($id);
         
-        foreach($objects as $object){
-            $price = $object->get("prix_$classe");
-            $product = array(
-                "name" => "$object",
-                "price" => $price
-            );
-        }
+        $price = $object->get("prix_$classe");
+        $product = array(
+            "name" => "$object",
+            "price" => $price
+        );
         
         $_SESSION["cart"][] = $product;
         $message = "Le produit '". end($_SESSION["cart"])["name"] ."' a été ajouté dans le panier !";

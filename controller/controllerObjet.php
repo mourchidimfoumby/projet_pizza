@@ -11,6 +11,7 @@ class ControllerObjet{
         $title = ucfirst($classe);
         $objects = $classe::getAll();
         include("view/head.php");
+        include("view/popup.php");
         include("view/navbar.html");
         include("view/products.php");
         include("view/cart.php");

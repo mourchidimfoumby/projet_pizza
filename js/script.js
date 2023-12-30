@@ -11,12 +11,10 @@ $(function () {
     let parameters = {
         'objet': objet,
     };
-    let element;
-    let myevent;
 
-    function addToCart(event, element) {
-        event.preventDefault();
-        parameters.id = $(element).data("id");
+    function addToCart(element) {
+        if(element != null) parameters.id = $(element).data("id");
+        else parameters.id = id;
         $.ajax({
             type: "POST",
             url: "controller/treatment_cart.php",
@@ -28,15 +26,14 @@ $(function () {
         })
         .done(function(response) {
             console.log('Réponse du serveur :', response);
-            location.reload();
+            if(element != null) location.reload();
         })
         .fail(function(xhr, status, error) {
             console.error('Erreur AJAX (statut ' + status + ') :', xhr.responseText);
         });
     }
 
-    function removeToCart(event, element) {
-        event.preventDefault()
+    function removeToCart(element) {
         parameters.position = $(element).data("position");
         $.ajax({
             type: "POST",
@@ -56,38 +53,32 @@ $(function () {
         });
     }
 
-    function showPopup(){
-        $("#app-container").css("pointer-events", "none");
-        $("body").css("overflow", "hidden")
-        $("#overlay").fadeIn();
-        $(".popup").fadeIn();
-    }
     function closePopup(){
-        $("#app-container").css("pointer-events", "all");
-        $("body").css("overflow", "auto")
-        $(".popup").fadeOut();
-        $("#overlay").fadeOut();
+        window.location.href = "index.php?objet=" + objet;
     }
 
-    $(".product").on("click", function(event){
-        element = this;
-        myevent = event;
-        showPopup();
+    $(".bi-x").on("click", closePopup);
+
+    $("#btn-popup-add").on("click", function() {
+        addToCart()
+        setTimeout(function() {
+            closePopup();
+        }, 100);
     });
 
-    $(".bi-x-circle").on("click", function(event){
-        removeToCart(event,this);
+    $(".bi-x-circle").on("click", function(){
+        removeToCart(this);
     });
     
-    $("#btn-popup-add").on("click", function() {
-        closePopup();
-        addToCart(myevent, element)
+    $(".other-product").on("click", function(event){
+        event.preventDefault();
+       addToCart(this);
     });
-    $("#btn-popup-cancel").on("click", closePopup);
 
 });
 
-// function clearSession(){
+
+//     function clearSession(){
 //     $.ajax({
 //         type: "POST",
 //         url: "controller/clear.php",
@@ -101,4 +92,4 @@ $(function () {
 //         console.error('Erreur AJAX (statut ' + status + ') :', xhr.responseText);
 //     });
 // }
-// $("#btn").on("click", clearSession);
+// $("#btn").on("click", clearSession); 
