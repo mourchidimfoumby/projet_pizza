@@ -6,9 +6,26 @@
                         GENERAL
 =====================================================
 */
+@font-face {
+    font-family: 'Titre';
+    src: url('../media/fonts/KastellaScript.otf');
+}
+@font-face {
+    font-family: 'Texte-regular';
+    src: url('../media/fonts/hack/Hack-Regular.ttf');
+}
+@font-face {
+    font-family: 'Texte-bold';
+    src: url('../media/fonts/hack/Hack-Bold.ttf');
+}
+@font-face {
+    font-family: 'Texte-italic';
+    src: url('../media/fonts/hack/Hack-Italic.ttf');
+}
 *{
     padding: 0px;
     margin: 0px;
+    font-family: 'Texte-regular';
 }
 
 li{
@@ -16,22 +33,28 @@ li{
 }
 a{
     text-decoration: none !important;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     color: white !important;
+    font-size: 16px;
+}
+button {
+    font-size: 14px !important;
 }
 h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Titre';
     color: black !important;
+    font-size: 3rem !important;
 }
 h2{
+    font-family: 'Texte-bold';
     font-size: 1.8rem !important;
     color: black !important;
 }
 h3{
+    font-family: 'Texte-bold';
     font-size: 1.2rem !important;
     color: black !important;
 }
 p{
-    font-size: 1rem !important;
+    font-size: 14px !important;
     color: #6b6e79;
 }

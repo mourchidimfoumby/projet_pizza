@@ -1,6 +1,7 @@
 @import url(popup.css);
 @import url(products.css);
 @import url(cart.css);
+@import url(home.css);
 
 main{
     display: flex;
