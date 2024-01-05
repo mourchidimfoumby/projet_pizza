@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     padding: 16px;
     gap: 10px;
-    flex-basis: 60%;
+    flex-basis: 80%;
     flex-grow: 1;
 }
 .product{
@@ -41,7 +41,9 @@
     padding: 8px;
     flex-grow: 1;
 }
-
+#text-parts p{
+    flex-grow: 1;
+}
 .button-cart{
     background-color: rgb(17, 104, 17);
     color: white;
@@ -53,6 +55,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 .button-cart:hover{
     background-color: rgb(15, 82, 15);

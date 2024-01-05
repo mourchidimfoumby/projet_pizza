@@ -28,16 +28,19 @@ class pizza extends objet{
         }
     }
 
-    public static function getIngredientList($id){
+    public static function getIngredientList($id, $condition = NULL){
         $request = "";
-        $request .= "SELECT nom_ingredient FROM pizza ";
+        $request .= "SELECT id_ingredient, nom_ingredient FROM pizza ";
         $request .= "NATURAL JOIN ingredient_pizza ";
         $request .= "NATURAL JOIN ingredient ";
-        $request .= "WHERE id_pizza = $id";
+        if($condition == null)
+            $request .= "WHERE id_pizza = $id";
+        else
+            $request .= "WHERE id_pizza = $id AND $condition";
         $result = connexion::pdo()->prepare($request);
         try{
             $result->execute();
-            return $result->fetchAll(PDO::FETCH_COLUMN);
+            return $result->fetchAll(PDO::FETCH_KEY_PAIR);
         }
         catch(PDOException $e){
             echo $e->getMessage();

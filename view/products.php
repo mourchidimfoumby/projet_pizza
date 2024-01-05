@@ -3,8 +3,8 @@
     if ($objects != null) {
        foreach ($objects as $object) {
             $id = $object->get("id_$classe");
-            if($classe == "pizza") echo '<a class="product" href="index.php?objet='.$classe.'&id='.$id.'">';
-            else echo '<a class="product other-product" href="#" data-id="'.$id.'">';
+            if($classe == "pizza") echo '<a class="product" href="index.php?objet='.$classe.'&id_pizza='.$id.'">';
+            else echo '<a class="product other-product" href="#" data-id_product="'.$id.'">';
                 switch($classe){
                     case "boisson":
                         echo '<img src="https://www.pngall.com/wp-content/uploads/15/Soda-Can-PNG-Photo.png">';
@@ -28,7 +28,7 @@
             echo '</a>';
         }
     }else {
-        echo "<h2>Rien à afficher</h2>";
+        echo "<h2>Aucun produit, revenez plus tard :)</h2>";
     }
     ?>
 </section>

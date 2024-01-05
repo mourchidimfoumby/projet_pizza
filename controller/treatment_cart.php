@@ -21,8 +21,11 @@ if($methodAllowed){
         response(HTTP_BAD_REQUEST, ERROR_MISS_ACTION);
     else
         switch($_POST["action"]){
-            case "addToCart":
-                addToCart();
+            case "addProductToCart":
+                addProductToCart();
+                break;
+            case "addPizzaToCart":
+                addPizzaToCart();
                 break;
             case "removeToCart":
                 removeToCart();
@@ -42,7 +45,7 @@ function response($response_code, $message){
     echo json_encode($response);
 }
 
-function addToCart(){
+function addProductToCart(){
     if(!isset($_POST["parameters"])){
         response(HTTP_BAD_REQUEST, ERROR_MISS_PARAMETERS);
     }
@@ -57,13 +60,14 @@ function addToCart(){
         $price = $object->get("prix_$classe");
         $product = array(
             "name" => "$object",
-            "price" => $price
+            "price" => $price,
+            "type" => $classe
         );
         
         $_SESSION["cart"][] = $product;
         $message = "Le produit '". end($_SESSION["cart"])["name"] ."' a été ajouté dans le panier !";
         response($response_code, $message);
-}
+    }
 }
 
 function removeToCart(){
@@ -85,6 +89,58 @@ function removeToCart(){
         }
         else  $message = "Erreur le produit à la position ". $position." n'existe pas.";
         response($response_code, $message);
+    }
 }
+
+function addPizzaToCart(){
+    if(!isset($_POST["parameters"])){
+        response(HTTP_BAD_REQUEST, ERROR_MISS_PARAMETERS);
+    }
+    else
+    {
+        $response_code = HTTP_OK;
+        $parameters = $_POST["parameters"];
+        $classe = $parameters["objet"];
+        $id = $parameters["id"];
+        $ingredientsPizza = $parameters["ingredients"];
+        $pizza = $classe::getOne($id);
+        $price = $pizza->get("prix_pizza");
+
+        $condition = "modifiable = 1";
+        $ingredientsPizzaInitial = $pizza->getIngredientList($id, $condition);
+
+        $normalizedIngredientsPizzaInitial = array_map('trim', $ingredientsPizzaInitial);
+        $normalizedIngredientsPizza = array_map('trim', $ingredientsPizza);
+        $ingredientsRemoved = array_diff($normalizedIngredientsPizzaInitial, $normalizedIngredientsPizza);
+        $ingredientsAdded = array_diff($normalizedIngredientsPizza, $normalizedIngredientsPizzaInitial);
+        $ingredientsDifferents =  $ingredientsRemoved + $ingredientsAdded;
+
+        if(empty($ingredientsDifferents)){
+            $product = array(
+                "name" => "$pizza",
+                "price" => $price,
+                "type" => $classe
+            );
+        }
+        else{
+            $productPrice = $price;
+            foreach($ingredientsAdded as $i){
+                $price += 3.00;
+            }
+            $product = array(
+                "name" => "$pizza",
+                "productPrice" => $productPrice,
+                "price" => $price,
+                "ingredientsAdded" => $ingredientsAdded,
+                "ingredientsRemoved" => $ingredientsRemoved,
+                "type" => "pizza_personnalise"
+            );
+        }
+        
+        $_SESSION["cart"][] = $product;
+        $message = "Le produit '". end($_SESSION["cart"])["name"] ."' a ete ajoutr dans le panier !";
+        response($response_code, $message);
+    }
 }
+
 ?>

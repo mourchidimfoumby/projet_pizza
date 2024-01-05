@@ -13,9 +13,12 @@ class objet{
         $this->$attribut = $valeur;
     }
 
-    public static function getAll(){
+    public static function getAll($condition = NULL){
         $classeRecuperee = static::$classe;
-        $requete ="SELECT * FROM $classeRecuperee;";
+        if($condition == NULL)
+            $requete ="SELECT * FROM $classeRecuperee;";
+        else
+            $requete ="SELECT * FROM $classeRecuperee WHERE $condition;";
         $resultat = connexion::pdo()->query($requete);
         $resultat->setFetchMode(PDO::FETCH_CLASS, $classeRecuperee);
         $tableau = $resultat->fetchAll();

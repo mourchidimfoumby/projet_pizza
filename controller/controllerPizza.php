@@ -1,5 +1,6 @@
 <?php
     require_once("model/pizza.php");
+    require_once("model/ingredient.php");
     require_once("controller/controllerObjet.php");
     
     class controllerPizza extends controllerObjet {

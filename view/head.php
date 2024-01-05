@@ -9,4 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<?php
+    if(isset($_GET["id"])) echo '<body style="overflow: hidden">';
+    else echo '<body>';
+?>

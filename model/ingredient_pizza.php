@@ -24,11 +24,5 @@ class ingredient_pizza extends objet{
         }
     }
 
-    // public function __toString(): string{
-    //     $l = $this->login;
-    //     $p = $this->prenomAdherent;
-    //     $n = $this->nomAdherent;
-    //     return "adhérent $l ($p $n)";
-    // }
 }
 ?>
