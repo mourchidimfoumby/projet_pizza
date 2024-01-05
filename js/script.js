@@ -7,7 +7,6 @@ $(function () {
   let parameters = {
     objet: objet,
   };
-  // let initialPizzaIngredients = {};
 
   /*============= FONCTIONS ==============*/
 
@@ -99,15 +98,6 @@ $(function () {
     $(itemList).appendTo("#popup-ul-remove");
   }
 
-  // if (id_pizza != null) {
-  //   let initialPizzaIngredientsList = $("#popup-ul-remove").find("li");
-    
-  //   initialPizzaIngredientsList.each(function () {
-  //     let nameIngredient = $(this).text();
-  //     let dataId = $(this).data("id_ingredient");
-  //     initialPizzaIngredients[dataId] = nameIngredient;
-  //   });
-
     function addPizzaToCart(){
       let pizzaIngredientsList = $("#popup-ul-remove").find("li");
       if(pizzaIngredientsList.length === 0) alert("Veuillez insérer au moins un ingrédient dans la pizza");
@@ -177,19 +167,3 @@ $(function () {
     addIngredientPopup(this);
   });
 });
-
-//     function clearSession(){
-//     $.ajax({
-//         type: "POST",
-//         url: "controller/clear.php",
-//         dataType: "json",
-//     })
-//     .done(function(response) {
-//         console.log('Réponse du serveur :', response);
-//         location.reload();
-//     })
-//     .fail(function(xhr, status, error) {
-//         console.error('Erreur AJAX (statut ' + status + ') :', xhr.responseText);
-//     });
-// }
-// $("#btn").on("click", clearSession);
