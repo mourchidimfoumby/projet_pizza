@@ -13,6 +13,9 @@ $(function () {
 
 
   /*============= EVENEMENTS ==============*/
+  if(id_pizza != null){
+    $("body").css("overflow", "hidden");
+  }
 
   $(".bi-x").on("click", function(){
     popup.close(objet)});
