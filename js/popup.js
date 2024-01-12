@@ -31,12 +31,13 @@ export const popup = {
 
     let spanIngredient = $(itemList).find("span.popup-list-add-price").first();
     let spanBtnAdd = $("#popup-btn-add").find("span#total-price").first();
-
-    let itemPrice = parseFloat(spanIngredient.text());
-    let totalPrice = parseFloat(spanBtnAdd.text());
-    totalPrice += itemPrice;
-    totalPrice = totalPrice.toFixed(2);
-    spanBtnAdd.text(totalPrice);
+    if(spanIngredient.text().length > 0){
+      let itemPrice = parseFloat(spanIngredient.text());
+      let totalPrice = parseFloat(spanBtnAdd.text());
+      totalPrice += itemPrice;
+      totalPrice = totalPrice.toFixed(2);
+      spanBtnAdd.text(totalPrice);
+    }
 
     $(itemList).removeClass("popup-list-add").addClass("popup-list-remove");
     $(itemList).appendTo("#popup-ul-remove");

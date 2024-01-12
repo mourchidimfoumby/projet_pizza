@@ -65,7 +65,7 @@ function addProductToCart(){
         );
         
         $_SESSION["cart"][] = $product;
-        $message = "Le produit '". end($_SESSION["cart"])["name"] ."' a été ajouté dans le panier !";
+        $message = "Le produit '". end($_SESSION["cart"])["name"] ."' a ete ajoute dans le panier !";
         response($response_code, $message);
     }
 }
@@ -138,7 +138,7 @@ function addPizzaToCart(){
         }
         
         $_SESSION["cart"][] = $product;
-        $message = "Le produit '". end($_SESSION["cart"])["name"] ."' a ete ajoutr dans le panier !";
+        $message = "Le produit '". end($_SESSION["cart"])["name"] ."' a ete ajoute dans le panier !";
         response($response_code, $message);
     }
 }
