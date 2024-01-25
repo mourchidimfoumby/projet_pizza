@@ -22,12 +22,10 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background-color: rgb(30, 30, 30);
     box-shadow: 1px 1px 3px grey;
-}
-nav li{
-    font-size: 20px;
-    padding-block: 20px;
+    padding-block: 15px;
 }
 nav ul{
     display: inline-flex;
@@ -36,12 +34,19 @@ nav ul{
 }
 nav a{
     color: white;
-    padding: 20px;
+    font-size: 20px;
+    padding: 27px 20px;
 }
-nav li:hover{
+nav ul a:hover{
     background-color: rgb(184, 103, 12);
 }
 #img-logo{
     width: 10%;
     height: 10%;
+}
+#nav-icon{
+    padding: 0px 20px;
+}
+nav .bi{
+    font-size: 32px;
 }

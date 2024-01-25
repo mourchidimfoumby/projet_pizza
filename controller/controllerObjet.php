@@ -1,6 +1,6 @@
 <?php
 
-class ControllerObjet{
+abstract class controllerObjet{
     protected static string $classe;
     protected static string $identifiant;
     // protected static array $champs;

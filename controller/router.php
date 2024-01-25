@@ -8,6 +8,7 @@ $objets = [
     "pizza",
     "dessert",
     "boisson",
+    "stock"
 ];
 
 //test pour savoir si un objet correct est passé dans l'url
