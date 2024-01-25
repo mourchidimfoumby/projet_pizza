@@ -1,0 +1,47 @@
+/*
+=====================================================
+                        HEADER
+=====================================================
+*/
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+header img{
+    padding: 10px;
+}
+#top-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/*----------NAVBAR-------------*/
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(30, 30, 30);
+    box-shadow: 1px 1px 3px grey;
+}
+nav li{
+    font-size: 20px;
+    padding-block: 20px;
+}
+nav ul{
+    display: inline-flex;
+    padding: 0px;
+    margin: 0px;
+}
+nav a{
+    color: white;
+    padding: 20px;
+}
+nav li:hover{
+    background-color: rgb(184, 103, 12);
+}
+#img-logo{
+    width: 10%;
+    height: 10%;
+}
