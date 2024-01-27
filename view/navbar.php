@@ -2,11 +2,11 @@
 
     $userType = "client";
     $user = "Se connecter";
-    if(isset($_SESSION["gestionnaire"])){
+    if(isset($_SESSION["gestionnaire"][0])){
         $userType = "gestionnaire";
         $user = $_SESSION["gestionnaire"][0];
     }
-    else if(isset($_SESSION["client"])){
+    else if(isset($_SESSION["client"][0])){
         $user = $_SESSION["client"][0];
     }
 ?>
@@ -26,7 +26,6 @@
         <ul>
             <li><a href="index.php?objet=<?=$userType ?>"><?=$user?></a></li>
         </ul>
-        <button id="btn"> CLEAR SESSION</button>
     </nav>
 </header>
 <main>

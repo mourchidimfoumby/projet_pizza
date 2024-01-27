@@ -51,7 +51,7 @@ class client
     return "$prenom $nom";
   }
 
-  public function __get($variable){
+  public function get($variable){
     return $this->$variable;
   }
 
@@ -71,7 +71,8 @@ class client
       // on récupère le tableau
       $objetClient = $resultat->fetchAll();
       // on retourne lefait que $tableau soit oui ou non de taille 1
-      return $objetClient;
+      if(!empty($objetClient)) return $objetClient;
+      else return null;
     } catch (PDOException $e) {
       echo $e->getMessage();
       return null;
