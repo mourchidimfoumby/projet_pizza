@@ -23,7 +23,7 @@ class controllerClient extends controllerObjet
         if(isset($_SESSION["client"])) {
             require_once("view/head.php");
             require_once("view/navbar.php");
-            require_once("view/compte.php");
+            require_once("view/compte_client.php");
             require_once("view/footer.html");
         }
         else{
@@ -57,6 +57,6 @@ class controllerClient extends controllerObjet
     public static function disconnection()
     {
         unset($_SESSION["client"]);
-        self::displayDefault();
+        header("Location: index.php");
     }
 }

@@ -9,7 +9,8 @@ $objets = [
     "dessert",
     "boisson",
     "client",
-    "gestionnaire"
+    "gestionnaire",
+    "stock"
 ];
 
 $conditionUrlGet = isset($_GET["objet"]) && in_array($_GET["objet"], $objets);
@@ -25,8 +26,8 @@ if ($conditionUrlGet) {
         $action = $_GET["action"];
         switch ($action) 
         {
-            case "disconnect":
-                $controller::disconnect();
+            case "disconnection":
+                $controller::disconnection();
             default:
                 $controller::displayDefault();
                 break;

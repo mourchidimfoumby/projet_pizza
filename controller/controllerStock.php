@@ -8,7 +8,7 @@ class controllerStock extends controllerObjet
     protected static string $classe = "stock";
     protected static string $identifiant = "id_stock";
 
-    public static function displayAll(){
+    public static function displayDefault(){
         $classe = static::$classe;
         $title = ucfirst($classe);
         $objects = $classe::getAll();

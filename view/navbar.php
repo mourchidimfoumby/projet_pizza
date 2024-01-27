@@ -1,7 +1,6 @@
 <?php
-
     $userType = "client";
-    $user = "Se connecter";
+    $user = "";
     if(isset($_SESSION["gestionnaire"][0])){
         $userType = "gestionnaire";
         $user = $_SESSION["gestionnaire"][0];
@@ -24,8 +23,22 @@
             <li><a href="index.php?objet=dessert"> Dessert</a></li>
         </ul>
         <ul>
-            <li><a href="index.php?objet=<?=$userType ?>"><?=$user?></a></li>
+            <li id="li-account">
+                <a id="nav-icon" href="index.php?objet=<?=$userType?>">
+                    <span class="bi bi-person-fill"></span>
+                </a>
+            <?php if(!empty($user)): ?>
+                <ul id="sub-menu-account">
+                    <li>
+                        <a class="link-account" href="index.php?objet=client&action=disconnection">
+                            <span class="bi bi-box-arrow-right"></span>Se déconnecter
+                        </a>
+                    </li>
+                </ul>
+            <?php endif; ?>
+            </li>
         </ul>
+        <!-- <ul> <button id="btn"> CLEAR SESSION</button> -->
     </nav>
 </header>
 <main>
