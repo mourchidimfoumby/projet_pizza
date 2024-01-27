@@ -1,11 +1,9 @@
-<!DOCTYPE html>  
-<html>  
-    <head>  
-        <title>Paiement</title>  
-        <link rel="stylesheet" type="text/css" href="paiement.css">
-    </head>  
-    <body> 
-    <form action="traitement_paiement.php" method="post">
+
+<section>
+    <form method="post">
+        <input type="hidden" name="objet" value="paiement">
+        <input type="hidden" name="action" value="insertCartePaiement">
+
         <label for="nom_titulaire">Nom du titulaire : </label>
         <input type="text" id="nom_titulaire" name="nom_titulaire" required>
 
@@ -20,12 +18,7 @@
 
         <button type="submit">Valider</button>
     </form>
+</section>
+   
 
-    <script>
-        document.getElementById('paiementForm').onsubmit = function() {
-            alert('Transaction en cours...');
-        };
-    </script>
-
-    </body>
-</html>
+    

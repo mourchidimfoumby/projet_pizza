@@ -1,6 +1,16 @@
 <?php
 require_once("model/carte_paiement");
-class controllerPaiement{
+
+class controllerPaiement extends ControllerObjet{
+
+    protected static string $classe = "carte_paiement";
+
+    public static function displayDefault(){
+        require_once("view/head.php");
+        require_once("view/navbar.php");
+        require_once("view/formulaire_paiement.html");
+        require_once("view/footer.php");
+    }
 
     public static function verif_Carte(){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,7 +19,7 @@ class controllerPaiement{
                 'cryptoCarte' => $_POST['crypto_carte']
             );
         }
-        carte_paiement::verif($donnee_carte);
+        return carte_paiement::verif($donnee_carte);    
     }
     public static function insertCartePaiement(){
 
@@ -25,13 +35,10 @@ class controllerPaiement{
             carte_paiement::insertion($donnees);
         }
 
-        echo "<script>window.location.href = 'index.php';</script>";
+        echo "<h2>Paiement réussi</h2>";
+        sleep(2);
+        header("Location : index.php");
         }
     }
-}
-
-
-
-
-   
+}  
 ?>
