@@ -11,8 +11,25 @@ $(function () {
     objet: objet,
   };
 
+  function clearSession(){
+    $.ajax({
+        type: "POST",
+        url: "controller/clear.php",
+        dataType: "json",
+    })
+    .done(function(response) {
+        console.log('Réponse du serveur :', response);
+        location.reload();
+    })
+    .fail(function(xhr, status, error) {
+        console.error('Erreur AJAX (statut ' + status + ') :', xhr.responseText);
+    });
+}
+
 
   /*============= EVENEMENTS ==============*/
+  $("#btn").on("click", clearSession);
+  
   if(id_pizza != null){
     $("body").css("overflow", "hidden");
   }

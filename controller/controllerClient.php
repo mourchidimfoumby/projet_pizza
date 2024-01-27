@@ -6,7 +6,7 @@ class controllerClient extends controllerObjet
 {
 
     protected static string $classe = "client";
-    protected static string $identifiant = "mail_client";
+    protected static string $identifiant = "id_client";
 
 
     protected static $champs = array(
@@ -18,41 +18,45 @@ class controllerClient extends controllerObjet
         "telephone_client"      => ["text", "téléphone"]
     );
     //appele au formulaire
-    public static function displayConnectionForm()
+    public static function displayDefault()
     {
-
-        include("view/connexion.php");
+        if(isset($_SESSION["client"])) {
+            require_once("view/head.php");
+            require_once("view/navbar.php");
+            require_once("view/compte.php");
+            require_once("view/footer.html");
+        }
+        else{
+            require_once("view/head.php");
+            require_once("view/navbar.php");
+            require_once("view/client_connection_form.html");
+            require_once("view/footer.html");
+        }
     }
 
-    public static function connect()
+    public static function connection()
     {
-        // Démarre la session
-        session_start();
-
+        $classe = static::$classe;
         // Récupère les identifiants depuis la méthode POST
-        $login = isset($_POST["mail_client"]) ? $_POST["mail_client"] : '';
-        $mdp_client = isset($_POST["mdp_client"]) ? $_POST["mdp_client"] : '';
+        $login = $_POST["mail_client"] ?? '';
+        $mdp_client = $_POST["mdp_client"] ?? '';
 
+        $client = $classe::connection($login, $mdp_client);
         // Vérifie les identifiants avec la méthode checkMDP
-        if (client::checkMDP($login, $mdp_client)) {
+        if (isset($client)) {
             // Enregistre le login dans la session
-            $_SESSION["mail_client"] = $login;
-
-            // Inclut les vues nécessaires à votre script principal
-            include("view/navbar.html");
-            include("view/footer.html");
-        } else {
-            // Affiche le formulaire de connexion en cas d'échec de vérification
-            self::displayConnectionForm();
+            $_SESSION["client"] = $client;
+        } 
+        else {
+            header("Location: index.php?objet=erreur");
+            exit();
         }
     }
 
 
-    public static function disconnect()
+    public static function disconnection()
     {
-        session_unset();
-        session_destroy();
-        setcookie(session_name(), '', time() - 1);
-        self::displayConnectionForm();
+        unset($_SESSION["client"]);
+        self::displayDefault();
     }
 }

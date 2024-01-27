@@ -1,3 +1,15 @@
+<?php
+
+    $userType = "client";
+    $user = "Se connecter";
+    if(isset($_SESSION["gestionnaire"])){
+        $userType = "gestionnaire";
+        $user = $_SESSION["gestionnaire"][0];
+    }
+    else if(isset($_SESSION["client"])){
+        $user = $_SESSION["client"][0];
+    }
+?>
 <div class="app-container">
 <header>
     <div id="top-header">
@@ -12,8 +24,9 @@
             <li><a href="index.php?objet=dessert"> Dessert</a></li>
         </ul>
         <ul>
-            <li><a href="index.php?objet=client">Se connecter</a></li>
+            <li><a href="index.php?objet=<?=$userType ?>"><?=$user?></a></li>
         </ul>
+        <button id="btn"> CLEAR SESSION</button>
     </nav>
 </header>
 <main>

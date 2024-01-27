@@ -1,67 +1,80 @@
 <?php
 require_once("objet.php");
-class adherent extends objet
+class client
 {
 
   protected static string $classe = "client";
-  protected static string $identifiant = "login";
+  protected static string $identifiant = "id_client";
 
   // tableau pour construre le <select> : 
   // 1. la valeur de l'attribut name
   // 2. le(s) champ()s à afficher dans le visuel
   //protected static $tableauSelect = array("emprunteur", "login");
 
-  protected string $id_client;
-  protected string $mdp_client;
-  protected string $nom_client;
-  protected string $prenom_client;
-  protected string $mail_client;
-  protected string $telephone_client;
+  protected $id_client;
+  protected $nom_client;
+  protected $prenom_client;
+  protected $mail_client;
+  protected $mdp_client;
+  protected $numero_telephone;
+  protected $adresse_client;
+  protected $reduction_client;
 
 
-  public function __construct(string $id_client = null, string $mdp_client = null, string $nom_client = null, string $prenom_client = null, string $mail_client = null, string $telephone_client = null)
-  {
+  public function __construct(
+    $id_client = null,
+    $mdp_client = null,
+    $nom_client = null,
+    $prenom_client = null,
+    $mail_client = null,
+    $numero_telephone = null,
+    $adresse_client = null,
+    $reduction_client = null
+    ){
     if (!is_null($id_client)) {
       $this->id_client = $id_client;
       $this->mdp_client = $mdp_client;
       $this->prenom_client = $prenom_client;
       $this->nom_client = $nom_client;
       $this->mail_client = $mail_client;
-      $this->telephone_client = $telephone_client;
+      $this->numero_telephone = $numero_telephone;
+      $this->adresse_client = $adresse_client;
+      $this->reduction_client = $reduction_client;
     }
   }
 
   public function __toString(): string
   {
 
-    $n = $this->nom_client;
-    $p = $this->prenom_client;
-    return "$p ' ' $n";
+    $nom = $this->nom_client;
+    $prenom = $this->prenom_client;
+    return "$prenom $nom";
   }
 
+  public function __get($variable){
+    return $this->$variable;
+  }
 
-
-
-
-  public static function checkMDP($l, $m)
+  public static function connection($login, $mdp)
   {
     // écriture de la requête
-    $requetePreparee = "SELECT * FROM client WHERE mail_client = :mail_client AND mdp = :mdp_client;";
+    $requetePreparee = "SELECT * FROM client WHERE mail_client = :mail AND mdp_client = :mdp;";
     // envoi de la requête et stockage de la réponse dans une variable $resultat
     $resultat = connexion::pdo()->prepare($requetePreparee);
     // on crée le tableau contenant le tag et sa valeur
-    $tags = array("mail_client" => $l, "mdp" => $m);
+    $tags = array("mail" => $login, "mdp" => $mdp);
     try {
       // on exécute la requête préparée
       $resultat->execute($tags);
       // on interprète le résultat selon la classe récupérée
-      $resultat->setFetchmode(PDO::FETCH_CLASS, "client");
+      $resultat->setFetchmode(PDO::FETCH_CLASS, self::$classe);
       // on récupère le tableau
-      $tableau = $resultat->fetchAll();
+      $objetClient = $resultat->fetchAll();
       // on retourne lefait que $tableau soit oui ou non de taille 1
-      return sizeof($tableau) == 1;
+      return $objetClient;
     } catch (PDOException $e) {
       echo $e->getMessage();
+      return null;
     }
   }
 }

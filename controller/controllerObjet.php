@@ -1,18 +1,18 @@
 <?php
 
-class ControllerObjet{
+abstract class controllerObjet{
     protected static string $classe;
     protected static string $identifiant;
     // protected static array $champs;
     // protected static array $tableauSelect;
 
-    public static function displayAll(){
+    public static function displayDefault(){
         $classe = static::$classe;
         $title = ucfirst($classe);
         $objects = $classe::getAll();
         include("view/head.php");
         include("view/popup.php");
-        include("view/navbar.html");
+        include("view/navbar.php");
         include("view/products.php");
         include("view/cart.php");
         include("view/footer.html");

@@ -8,5 +8,5 @@ main{
     flex-direction: row;
     flex-wrap: nowrap;
     background-color: whitesmoke;
-    min-height: 100vh;
+    min-height: 65vh;
 }
