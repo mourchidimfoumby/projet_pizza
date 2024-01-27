@@ -12,7 +12,7 @@ $(function () {
   };
 
 
-  /*============= EVENEMENTS ==============*/
+  /*============= EVENEMENTS ==============*/  
   if(id_pizza != null){
     $("body").css("overflow", "hidden");
   }
