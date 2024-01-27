@@ -1,0 +1,31 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <title>Paiement</title>  
+        <link rel="stylesheet" type="text/css" href="paiement.css">
+    </head>  
+    <body> 
+    <form action="traitement_paiement.php" method="post">
+        <label for="nom_titulaire">Nom du titulaire : </label>
+        <input type="text" id="nom_titulaire" name="nom_titulaire" required>
+
+        <label for="numero_carte">Numéro de carte : </label>
+        <input type="text" id="numero_carte" name="numero_carte" minlength="16" maxlength="16" required>
+
+        <label for="crypto_carte">Cryptogramme : </label>
+        <input type="text" id="crypto_carte" name="crypto_carte" minlength="3" maxlength="3" required>
+
+        <label for="date_expiration">Date d'expiration : </label>
+        <input type="month" id="date_expiration" name="date_expiration" required>
+
+        <button type="submit">Valider</button>
+    </form>
+
+    <script>
+        document.getElementById('paiementForm').onsubmit = function() {
+            alert('Transaction en cours...');
+        };
+    </script>
+
+    </body>
+</html>
