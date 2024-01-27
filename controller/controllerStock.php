@@ -13,7 +13,7 @@ class controllerStock extends controllerObjet
         $title = ucfirst($classe);
         $objects = $classe::getAll();
         include("view/head.php");
-        include("view/navbar.html");
+        include("view/navbar.php");
         include("view/footer.html");
     }
 }
