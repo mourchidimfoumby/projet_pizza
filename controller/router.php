@@ -1,5 +1,4 @@
 <?php
-
 require_once("config/connexion.php");
 connexion::connect();
 
@@ -10,6 +9,7 @@ $objets = [
     "boisson",
     "client",
     "gestionnaire",
+    "paiement",
     "stock",
     "finance"
 ];
