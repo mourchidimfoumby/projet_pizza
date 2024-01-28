@@ -57,6 +57,7 @@ class controllerClient extends controllerObjet
     public static function disconnection()
     {
         unset($_SESSION["client"]);
-        header("Location: index.php");
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+        exit();
     }
 }

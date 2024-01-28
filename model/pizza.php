@@ -27,7 +27,7 @@ class pizza extends objet{
             $this->pizza_du_moment = $pizza_du_moment;
         }
     }
-
+    
     public static function getIngredientList($id, $condition = NULL){
         $request = "";
         $request .= "SELECT id_ingredient, nom_ingredient FROM pizza ";

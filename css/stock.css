@@ -1,0 +1,42 @@
+.table-section{
+    flex-grow: 1;
+    padding: 20px;
+}
+.table-section div{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+.table-section div button{
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+    color: whitesmoke;
+    border: 1px solid rgb(30,30,30);
+}
+#btn-stock-edit{
+    background-color: rgb(184, 103, 12);
+}
+#btn-stock-discard{
+    background-color: lightgray;
+}
+#table-stock{
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 10px!important;
+    width: 100%;
+}
+
+#table-stock thead{
+    padding-block: 10px;
+    background-color: rgb(184, 103, 12);
+    color: whitesmoke;
+}
+
+#table-stock th, #table-stock td{
+    padding: 5px;
+    border: 1px solid rgb(30,30,30);
+    font-weight: 100;
+}

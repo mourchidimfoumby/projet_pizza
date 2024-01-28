@@ -30,7 +30,7 @@
             <?php if(!empty($user)): ?>
                 <ul id="sub-menu-account">
                     <li>
-                        <a class="link-account" href="index.php?objet=client&action=disconnection">
+                        <a class="link-account" href="index.php?objet=<?= $userType?>&action=disconnection">
                             <span class="bi bi-box-arrow-right"></span>Se déconnecter
                         </a>
                     </li>

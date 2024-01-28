@@ -14,7 +14,7 @@ class controllerGestionnaire extends controllerObjet
         if(isset($_SESSION["gestionnaire"])) {
             require_once("view/head.php");
             require_once("view/navbar.php");
-            require_once("view/compte_gestionnaire.php");
+            require_once("view/home_gestionnaire.php");
             require_once("view/footer.html");
         }
         else{
@@ -47,6 +47,7 @@ class controllerGestionnaire extends controllerObjet
     public static function disconnection()
     {
         unset($_SESSION["gestionnaire"]);
-        self::displayDefault();
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+        exit();
     }
 }
