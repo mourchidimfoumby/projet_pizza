@@ -27,5 +27,16 @@ class stock extends objet{
             $this->seuil_stock = $seuil_stock;
         }
     }
+
+    public static function getAll($condition = NULL){
+        $classeRecuperee = static::$classe;
+        if($condition == NULL)
+            $requete ="SELECT * FROM $classeRecuperee;";
+        else
+            $requete ="SELECT * FROM $classeRecuperee WHERE $condition;";
+        $resultat = connexion::pdo()->query($requete);
+        $tableau = $resultat->fetchAll(PDO::FETCH_ASSOC);
+        return $tableau;
+    }
 }
 ?>

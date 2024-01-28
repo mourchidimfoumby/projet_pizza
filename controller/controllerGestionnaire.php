@@ -47,6 +47,7 @@ class controllerGestionnaire extends controllerObjet
     public static function disconnection()
     {
         unset($_SESSION["gestionnaire"]);
-        self::displayDefault();
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+        exit();
     }
 }

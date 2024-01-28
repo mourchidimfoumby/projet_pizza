@@ -58,6 +58,23 @@ class objet{
         }
     }
 
+    public static function update($donnees, $id){
+        $classeRecuperee = static::$classe;
+        $identifiant = static::$identifiant;
+        $requetePreparee = "";
+        foreach($donnees as $column => $val){
+            $requetePreparee .= "UPDATE $classeRecuperee SET $column = '$val' WHERE $identifiant = '$id';";
+        }
+        $resultat = connexion::pdo()->prepare($requetePreparee); 
+        try{
+            $resultat->execute();
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+            echo $requetePreparee;
+        }
+    }
+
     // public static function delete($id){
     //      $classeRecuperee = static::$classe; 
     //      $identifiant = static::$identifiant;
