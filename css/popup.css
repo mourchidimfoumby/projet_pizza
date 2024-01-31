@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
 }
-.popup-container{
+.popup-container-edit-command{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -110,13 +110,7 @@
     margin-left: 15px !important;
     margin-right: 5px !important;
 }
-
-/*
-===================================================
-                    POPUP FORM  
-===================================================
-*/
-.popup-container-form{
+.popup-container-edit{
     gap: 0px!important;
     height: max-content;
     min-width: 60%;

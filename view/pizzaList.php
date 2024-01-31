@@ -1,5 +1,5 @@
 <section class="Liste_pizza"> 
- <form>
+ <form class="form_ListePizza">
     <ul>
     <?php
         foreach ($pizzas as $pizza) { 
@@ -22,6 +22,6 @@
     ?>
     </ul>
 
-    <button type="submit" href="index.php?objet=pizza&action=create"> Nouvelle pizza</button>
+    <a href="index.php?objet=pizza&action=create"><button> Nouvelle pizza</button></a>
    </form>
 </section>

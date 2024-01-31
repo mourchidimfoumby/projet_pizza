@@ -60,6 +60,12 @@ if ($conditionUrlGet) {
             case "update":
                 $controller::update();
                 break;
+            case "insertCartePaiement":
+                $controller::insertCartePaiement();
+                break;
+            case "create":
+                $controller::create();
+                break;
             default:
                 $controller::displayDefault();
                 break;
