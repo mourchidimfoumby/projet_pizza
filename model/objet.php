@@ -58,7 +58,6 @@ class objet{
         }
     }
 
-    
     public static function update($donnees, $id){
         $classeRecuperee = static::$classe;
         $identifiant = static::$identifiant;
@@ -72,7 +71,6 @@ class objet{
         }
         catch(PDOException $e){
             echo $e->getMessage();
-            echo $requetePreparee;
         }
     }
 

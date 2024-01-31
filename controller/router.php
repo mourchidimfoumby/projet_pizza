@@ -7,11 +7,10 @@ $objets = [
     "pizza",
     "dessert",
     "boisson",
-    "client",
-    "gestionnaire",
-    "paiement"
 ];
 
+$conditionUrlGet = isset($_GET["objet"]) && in_array($_GET["objet"], $objets);
+$conditionUrlPost = isset($_POST["objet"]) && in_array($_POST["objet"], $objets);
 $conditionUrlGet = isset($_GET["objet"]) && in_array($_GET["objet"], $objets);
 $conditionUrlPost = isset($_POST["objet"]) && in_array($_POST["objet"], $objets);
 //test pour savoir si un objet correct est passé dans l'url
@@ -25,14 +24,9 @@ if ($conditionUrlGet) {
         $action = $_GET["action"];
         switch ($action) 
         {
-            case "disconnect":
-                $controller::disconnect();
-            break;
-            case "stockPizza":
-                $controller::stockPizza();
-            break;
-            case "getIngredientList":
-                $controller::getIngredientList();
+            case "disconnection":
+                $controller::disconnection();
+                break;
             default:
                 $controller::displayDefault();
                 break;
@@ -46,18 +40,17 @@ if ($conditionUrlGet) {
             case "connection":
                 $controller::connection();
                 break;
+            case "update":
+                $controller::update();
             case "insertCartePaiement":
                 $controller::insertCartePaiement();
                 break;
             default:
                 $controller::displayDefault();
                 break;
-            
         }
-
     }
     else $controller::displayDefault();
 }
 else require_once("view/home.php");
-
 ?>

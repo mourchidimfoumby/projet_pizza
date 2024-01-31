@@ -7,10 +7,10 @@ header{
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: white;
+    background-color: whitesmoke;
 }
 header img{
-    padding: 10px;
+    padding: 5px;
 }
 #top-header{
     display: flex;
@@ -22,26 +22,74 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background-color: rgb(30, 30, 30);
     box-shadow: 1px 1px 3px grey;
-}
-nav li{
-    font-size: 20px;
-    padding-block: 20px;
 }
 nav ul{
     display: inline-flex;
     padding: 0px;
     margin: 0px;
+    position: relative;
 }
 nav a{
     color: white;
-    padding: 20px;
+    font-size: 18px;
+    padding: 25.5px 20px;
 }
-nav li:hover{
+nav > ul:first-child a:hover{
     background-color: rgb(184, 103, 12);
 }
 #img-logo{
-    width: 10%;
-    height: 10%;
+    width: 8%;
+    height: 8%;
+}
+#nav-icon{
+    padding: 0px;
+    margin-inline: 20px;
+    margin-block: 0px!important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+#li-account{
+    padding-block: 10px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+#li-account:hover #sub-menu-account{
+    display: block;
+}
+#sub-menu-account > li:hover{
+    background-color: rgb(54, 54, 54);
+    cursor: pointer;
+    display: block;
+}
+nav .bi-person-fill{
+    font-size: 36px;
+}
+#sub-menu-account{
+    display: none;
+    position: absolute;
+    margin-left: 70px;
+    margin-top: 9px;
+    background-color: rgb(70, 70, 70);
+    z-index: 99;
+}
+#sub-menu-account li{
+    padding: 12px;
+    width: max-content;
+}
+.link-account{
+    padding: 0px!important;
+    margin: 0px!important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+.bi-box-arrow-right{
+    font-size: 20px;
 }

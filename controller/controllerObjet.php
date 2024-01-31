@@ -1,21 +1,34 @@
 <?php
 
-class ControllerObjet{
+abstract class controllerObjet{
     protected static string $classe;
     protected static string $identifiant;
-    // protected static array $champs;
+    protected static array $champs;
     // protected static array $tableauSelect;
 
-    public static function displayAll(){
+    public static function displayDefault(){
         $classe = static::$classe;
         $title = ucfirst($classe);
         $objects = $classe::getAll();
-        include("view/head.php");
-        include("view/popup.php");
-        include("view/navbar.html");
-        include("view/products.php");
-        include("view/cart.php");
-        include("view/footer.html");
+        require_once("view/head.php");
+        require_once("view/popup_edit_commande.php");
+        require_once("view/navbar.php");
+        require_once("view/products.php");
+        require_once("view/cart.php");
+        require_once("view/footer.html");
+    }
+
+    public static function update(){
+        $classe = static::$classe;
+        $donnees = array();
+        $POST = array_diff_key($_POST, array("action" => ""));
+        foreach($POST as $name => $value){
+            $donnees[$name] = $value;
+        }
+        $idRecuperee = $_GET[static::$identifiant];
+        $classe::update($donnees, $idRecuperee);
+        header("Location: index.php?objet=$classe");
+        exit();
     }
     
 
@@ -34,11 +47,11 @@ class ControllerObjet{
     //         $title = "un $classeRecuperee";
     //     }
     //     $idRecuperee = $_GET[static::$identifiant];
-    //     include("view/debut.php");
-    //     include("view/menu.html");
+    //     require_once("view/debut.php");
+    //     require_once("view/menu.html");
     //     $tableau = $classeRecuperee::getOne($idRecuperee);
-    //     include("view/details.php");
-    //     include("view/fin.php");
+    //     require_once("view/details.php");
+    //     require_once("view/fin.php");
     // }
 
     // public static function delete(){
@@ -53,10 +66,10 @@ class ControllerObjet{
     //     $classe = static::$classe;
     //     $identifiant = static::$identifiant;
     //     $title = "création $classe";
-    //     include("view/debut.php");
-    //     include("view/menu.html");
-    //     include("view/formulaireCreation.php");
-    //     include("view/fin.php");
+    //     require_once("view/debut.php");
+    //     require_once("view/menu.html");
+    //     require_once("view/formulaireCreation.php");
+    //     require_once("view/fin.php");
     // }
 
     // public static function create(){
