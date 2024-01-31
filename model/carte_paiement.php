@@ -1,7 +1,4 @@
 <?php
-require_once("connexion.php");
-require_once("config.php");
-require_once("controller_Paiement");
 class carte_paiement{
     //attributs
     protected $id_carte;
@@ -56,10 +53,10 @@ class carte_paiement{
 
     //vérif carte
     public static function verif($donnee_carte){
-        $num_carte = $donnee_carte[0];
-        $crypto =  $donnee_carte[1];
+        $num_carte = $donnee_carte['numeroCarte'];
+        $crypto =  $donnee_carte['cryptoCarte'];
 
-        $requeteVerif = "SELECT COUNT(*) FROM carte_paiement WHERE numero_cate = $num_carte AND cryptogramme = $crypto";
+        $requeteVerif = "SELECT COUNT(*) FROM carte_paiement WHERE numero_carte = $num_carte AND cryptogramme = $crypto";
         $resultat = connexion::pdo()->prepare($requeteVerif); 
         try{
         $resultat->execute();

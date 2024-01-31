@@ -27,6 +27,12 @@ if ($conditionUrlGet) {
         {
             case "disconnect":
                 $controller::disconnect();
+            break;
+            case "stockPizza":
+                $controller::stockPizza();
+            break;
+            case "getIngredientList":
+                $controller::getIngredientList();
             default:
                 $controller::displayDefault();
                 break;
@@ -53,5 +59,5 @@ if ($conditionUrlGet) {
     else $controller::displayDefault();
 }
 else require_once("view/home.php");
-?>
+
 ?>

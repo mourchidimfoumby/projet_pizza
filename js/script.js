@@ -42,4 +42,9 @@ $(function () {
   $("#popup-ul-add").on("click", ".popup-list-add", function () {
     popup.addIngredient(this);
   });
+
+  $(".bi-star").on("click", function() {
+    popup.addPizzaMoment(this);
+  });
+  
 });

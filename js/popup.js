@@ -41,5 +41,9 @@ export const popup = {
 
     $(itemList).removeClass("popup-list-add").addClass("popup-list-remove");
     $(itemList).appendTo("#popup-ul-remove");
+  },
+
+  addPizzaMoment: function (){
+    //let 
   }
 };

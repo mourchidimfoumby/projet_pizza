@@ -47,6 +47,21 @@ class pizza extends objet{
             echo $request;
         }
     }
+
+    public static function getVuePizza(){
+        $classe = static::$classe;
+        $request = "SELECT * FROM Liste_pizza";
+        $result = connexion::pdo()->prepare($request);
+        $result->setFetchMode(pdo::FETCH_CLASS, $classe);
+        $resultat = $result->fetchAll();
+        try{
+            return $resultat;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
+
     public function __toString(): string{
         return strval($this->nom_pizza);
     }

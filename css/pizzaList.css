@@ -1,0 +1,62 @@
+.Liste_pizza {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+ul {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    list-style-type: none; /* Remove default list styles */
+}
+
+li {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+li:hover {
+    background-color: #f9f9f9;
+}
+
+.prixPizza {
+    font-size: 1.2em;
+    color: #e74c3c; /* A distinct color for the price */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.prixPizza {
+    font-size: 1.2em;
+    color: #e74c3c; 
+    margin-top: 5px;
+}
+
+
+
