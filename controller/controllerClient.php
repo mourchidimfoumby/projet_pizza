@@ -8,15 +8,6 @@ class controllerClient extends controllerObjet
     protected static string $classe = "client";
     protected static string $identifiant = "id_client";
 
-
-    protected static $champs = array(
-        "login"          => ["text", "identifiant"],
-        "mdp_client"     => ["password", "mot de passe"],
-        "nom_client"    => ["text", "nom"],
-        "prenom_client" => ["text", "prénom"],
-        "mail_client"          => ["email", "email"],
-        "telephone_client"      => ["text", "téléphone"]
-    );
     //appele au formulaire
     public static function displayDefault()
     {

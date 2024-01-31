@@ -36,6 +36,8 @@ class controllerGestionnaire extends controllerObjet
 
         if (isset($gestionnaire)) {
             $_SESSION["gestionnaire"] = $gestionnaire;
+            header("Location: index.php?objet=gestionnaire");
+            exit();
         } 
         else {
             header("Location: index.php?objet=erreur");

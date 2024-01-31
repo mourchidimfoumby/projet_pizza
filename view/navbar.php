@@ -25,7 +25,7 @@
         <ul>
             <li id="li-account">
                 <a id="nav-icon" href="index.php?objet=<?=$userType?>">
-                    <span class="bi bi-person-fill"></span>
+                    <?=$user?><span class="bi bi-person-fill"></span>
                 </a>
             <?php if(!empty($user)): ?>
                 <ul id="sub-menu-account">
@@ -38,7 +38,6 @@
             <?php endif; ?>
             </li>
         </ul>
-        <!-- <ul> <button id="btn"> CLEAR SESSION</button> -->
     </nav>
 </header>
 <main>

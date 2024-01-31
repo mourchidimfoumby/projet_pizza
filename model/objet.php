@@ -71,7 +71,6 @@ class objet{
         }
         catch(PDOException $e){
             echo $e->getMessage();
-            echo $requetePreparee;
         }
     }
 
