@@ -13,6 +13,11 @@ class pizza extends objet{
     protected $prix_pizza;
     protected $pizza_du_moment;
 
+    protected static array $champs = array(
+        "nom_pizza" =>["text", "Nom de la pizza"],
+        "prix_pizza" =>["numbre", "Prix"]
+    );
+
     public function __construct(
         $id_pizza = NULL,
         $nom_pizza = NULL,

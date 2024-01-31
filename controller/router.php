@@ -27,6 +27,9 @@ if ($conditionUrlGet) {
             case "disconnection":
                 $controller::disconnection();
                 break;
+            case "stockPizza":
+                $controller::stockPizza();
+                break;
             default:
                 $controller::displayDefault();
                 break;
@@ -44,6 +47,9 @@ if ($conditionUrlGet) {
                 $controller::update();
             case "insertCartePaiement":
                 $controller::insertCartePaiement();
+                break;
+            case "create":
+                $controller::create();
                 break;
             default:
                 $controller::displayDefault();
