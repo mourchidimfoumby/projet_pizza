@@ -39,6 +39,11 @@ if ($conditionUrlGet) {
             case "create":
                 $controller::create();
                 break;
+            case "stockPizza":
+                $controller::stockPizza();
+            break;
+            case "getIngredientList":
+                $controller::getIngredientList();
             default:
                 $controller::displayDefault();
                 break;
