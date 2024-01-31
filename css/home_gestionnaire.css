@@ -1,20 +1,18 @@
 .gestionnaire-home-section{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     flex-grow: 1;
+    flex-wrap: wrap;
     padding: 20px;
     gap: 20px;
 }
-#links-pizza-stock{
-    flex-basis: 45%;
-    flex-shrink: 0;
+#links-pizza-stock, #links-stock{
     flex-grow: 1;
+    flex-basis: 32%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("https://projets.iut-orsay.fr/saes3-mmfoumb/mourchidi/pizza-14/media/pictures/bg_stock_pizza.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,24 +23,15 @@
 .gestionnaire-home-section a:hover {
     transform: scale(1.02);
 }
+#links-pizza-stock{
+    background-image: url("https://projets.iut-orsay.fr/saes3-mmfoumb/mourchidi/pizza-14/media/pictures/bg_stock_pizza.jpg");
+}
 #links-stock{
-    flex-basis: 45%;
-    flex-shrink: 0;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-image: url("https://projets.iut-orsay.fr/saes3-mmfoumb/mourchidi/pizza-14/media/pictures/bg_stock.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-size: 25px;
-    font-weight: bold;
-    transition: .5s ease-in-out;
 }
 #links-finance{
-    flex: 50%;
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 32%;
     display: flex;
     align-items: center;
     justify-content: center;

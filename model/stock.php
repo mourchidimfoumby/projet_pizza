@@ -38,5 +38,8 @@ class stock extends objet{
         $tableau = $resultat->fetchAll(PDO::FETCH_ASSOC);
         return $tableau;
     }
+
+    public function __toString(): string{
+        return $this->nom_stock;
+    }
 }
-?>
