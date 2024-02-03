@@ -12,11 +12,6 @@ class pizza extends objet{
     protected $nom_pizza;
     protected $prix_pizza;
     protected $pizza_du_moment;
-
-    protected static array $champs = array(
-        "nom_pizza" =>["text", "Nom de la pizza"],
-        "prix_pizza" =>["numbre", "Prix"]
-    );
     
     public function __construct(
         $id_pizza = NULL,
@@ -90,13 +85,13 @@ class pizza extends objet{
         $ingredientRequest = "";
         $allergeneRequest = "";
 
-        foreach($ingredients as $id){
+        foreach($ingredients as $ingredient){
             $ingredientRequest.= "INSERT INTO $ingredientPizzaClass ($ingredientPizzaColumns)
-            VALUES($lastId, $id, £££);";
+            VALUES($lastId, $ingredient[id], $ingredient[quantite]);";
         }
         foreach($allergenes as $id){
             $allergeneRequest.= "INSERT INTO $allergenePizzaClass ($allergenePizzaColumns)
-            VALUES($lastId, $id, £££);";
+            VALUES($lastId, $id);";
         }
         $resultatIngredient = connexion::pdo()->prepare($ingredientRequest); 
         $resultatAllergene = connexion::pdo()->prepare($allergeneRequest); 

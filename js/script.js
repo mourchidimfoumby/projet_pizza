@@ -7,13 +7,15 @@ $(function () {
   const params = new URLSearchParams(window.location.search);
   let objet = params.get("objet");
   let id_pizza = params.get("id_pizza");
+  let id_stock = params.get("id_stock");
+  let action = params.get("action");
   let parameters = {
     objet: objet,
   };
 
 
   /*============= EVENEMENTS ==============*/  
-  if(id_pizza != null){
+  if(id_pizza != null || action == "displayCreateForm" || id_stock != null){
     $("body").css("overflow", "hidden");
   }
 
@@ -47,6 +49,6 @@ $(function () {
   });
 
   $(".popup-create-checkbox").on("click", function(event){
-      popup.selectElement(this, event);
+      popup.selectElementPizza(this, event);
   });
 });

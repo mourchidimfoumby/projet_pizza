@@ -45,11 +45,22 @@ export const popup = {
     $(itemList).appendTo("#popup-ul-remove");
   },
 
-  selectElement: function(itemIngredient, event){
+  selectElementPizza: function(itemIngredient, event){
     let checkbox = $(itemIngredient).find(".myCheckBox");
-    if (!$(event.target).is(":checkbox") && !$(event.target).is("label")) {
-    checkbox.prop("checked", !checkbox.prop("checked"));
+    let inputQte = $(itemIngredient).find(".myCheckBox-qte");
+    if (!checkbox.prop("checked")){
+      checkbox.prop("disabled", false);
+      inputQte.prop("disabled", false);
+      inputQte.prop("required", true);
+      checkbox.prop("checked", !checkbox.prop("checked"));
+      $(itemIngredient).toggleClass("highlight", checkbox.prop("checked"));
     }
-    $(itemIngredient).toggleClass("highlight", checkbox.prop("checked"));
+    else if(checkbox.prop("checked") && !$(event.target).is(".myCheckBox-qte")){
+      checkbox.prop("disabled", true);
+      inputQte.prop("disabled", true);
+      inputQte.prop("required", false);
+      checkbox.prop("checked", !checkbox.prop("checked"));
+      $(itemIngredient).toggleClass("highlight", checkbox.prop("checked"));
+    }
   }
 };

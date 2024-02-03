@@ -10,7 +10,7 @@ class controllerPizza extends controllerObjet
     protected static string $identifiant = "id_pizza";
     protected static array $champs = array(
         "nom_pizza" =>["text", "Nom de la pizza"],
-        "prix_pizza" =>["numbre", "Prix"]
+        "prix_pizza" =>["number", "Prix"]
     );
 
     public static function displayStock() {
@@ -64,7 +64,51 @@ class controllerPizza extends controllerObjet
                 "ingredient" => $ingredients,
                 "allergene" => $allergenes
             );
-            $class::create($donnees);
+            $identifiant = static::$identifiant;
+
+        $valuesSQL = function($values){
+            $result = "";
+            foreach($values as $val){
+                $result.= "'$val',";
+            }
+            $result = substr_replace($result, "", -1);
+            return $result;
+        };
+
+        $pizza = $donnees["pizza"];
+        $ingredients = $donnees["ingredient"];
+        $allergenes = $donnees["allergene"];
+        
+        $pizzaClass = static::$classe;
+        $ingredientPizzaClass = "ingredient_pizza";
+        $allergenePizzaClass = "allergene_pizza";
+        
+        $pizzaColumns = implode(', ', array_keys($pizza));
+        $ingredientPizzaColumns = "id_pizza, id_ingredient, quantite_ingredient";
+        $allergenePizzaColumns = "id_pizza, id_allergene";
+
+        $pizzaRequest = "INSERT INTO $pizzaClass ($pizzaColumns)
+        VALUES(". $valuesSQL($pizza) .")";
+        connexion::pdo()->query($pizzaRequest);
+        $lastIdRequest = "SELECT MAX($identifiant) FROM $pizzaClass";
+        $resultLastId = connexion::pdo()->query($lastIdRequest);
+        $lastId = $resultLastId->fetchColumn();
+        $ingredientRequest = "";
+        $allergeneRequest = "";
+
+        foreach($ingredients as $ingredient){
+            $ingredientRequest.= "INSERT INTO $ingredientPizzaClass ($ingredientPizzaColumns)
+            VALUES($lastId, $ingredient[id], $ingredient[quantite]);";
+        }
+        foreach($allergenes as $id){
+            $allergeneRequest.= "INSERT INTO $allergenePizzaClass ($allergenePizzaColumns)
+            VALUES($lastId, $id);";
+        }
+        $resultatIngredient = connexion::pdo()->prepare($ingredientRequest); 
+        $resultatAllergene = connexion::pdo()->prepare($allergeneRequest); 
+        $resultatIngredient->execute();
+        $resultatAllergene->execute();
+        //     //$class::create($donnees);
             // header("Location: index.php?objet=pizza&action=displayStock");
             // exit();
         }
