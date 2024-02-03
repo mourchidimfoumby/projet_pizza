@@ -5,12 +5,17 @@ require_once("model/carte_paiement.php");
 class controllerPaiement extends controllerObjet{
 
     protected static string $classe = "carte_paiement";
-
+ 
     public static function displayDefault(){
+        if(isset($_SESSION["client"])) {
         require_once("view/head.php");
-        require_once("view/navbar.html");
+        require_once("view/navbar.php");
         require_once("view/formulaire_paiement.html");
         require_once("view/footer.html");
+        }else{
+            header('Location: index.php?objet=client');
+            exit();
+        }
     }
 
     public static function verif_Carte(){
