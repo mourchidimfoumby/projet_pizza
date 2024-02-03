@@ -1,7 +1,9 @@
 
 export const popup = {
     close : function (objet) {
-    window.location.href = "index.php?objet=" + objet;
+      if(objet != "pizza")
+        window.location.href = "index.php?objet=" + objet;
+      else window.location.href = "index.php?objet=" + objet + "&action=displayStock";
   },
 
   removeIngredient : function (btnSpanRemove) {
@@ -41,5 +43,13 @@ export const popup = {
 
     $(itemList).removeClass("popup-list-add").addClass("popup-list-remove");
     $(itemList).appendTo("#popup-ul-remove");
+  },
+
+  selectElement: function(itemIngredient, event){
+    let checkbox = $(itemIngredient).find(".myCheckBox");
+    if (!$(event.target).is(":checkbox") && !$(event.target).is("label")) {
+    checkbox.prop("checked", !checkbox.prop("checked"));
+    }
+    $(itemIngredient).toggleClass("highlight", checkbox.prop("checked"));
   }
 };

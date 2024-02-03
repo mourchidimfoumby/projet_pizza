@@ -5,6 +5,7 @@
 @import url("form.css");
 @import url("home_gestionnaire.css");
 @import url("stock.css");
+@import url("pizza_list.css");
 
 main{
     display: flex;

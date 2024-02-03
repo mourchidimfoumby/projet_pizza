@@ -87,32 +87,6 @@ class objet{
     //      }
     // }
 
-    // public static function create($donnees){
-    //     $columns = implode(', ', array_keys($donnees));
-    //     $values = array();
-    //     $classeRecuperee = static::$classe;
-    //     foreach($donnees as $val){
-    //         array_push($values, $val);
-    //     }
-    //     $valuesSQL = function($values){
-    //         $result = "";
-    //         foreach($values as $val){
-    //             $result.= "'$val',";
-    //         }
-    //         $result = substr_replace($result, "", -1);
-    //         return $result;
-    //     };
-    //     $requetePreparee = "INSERT INTO $classeRecuperee ($columns)
-    //     VALUES(". $valuesSQL($values) .")";
-    //     $resultat = connexion::pdo()->prepare($requetePreparee); 
-    //     try{
-    //         $resultat->execute();
-    //     }
-    //     catch(PDOException $e){
-    //     echo $e->getMessage();
-    //     echo $requetePreparee;
-    //     }
-    // }
 
     // public static function getSelect(){
     //     $tableauSelect = static::$tableauSelect;

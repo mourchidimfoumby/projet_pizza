@@ -1,0 +1,37 @@
+.section-pizza-list{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 16px;
+}
+.pizza-list{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    width: 50%;
+    padding: 16px;
+    border-radius: 5px;
+}
+.prix-pizza {
+    font-size: 1.2rem;
+    color: #e74c3c;
+}
+.pizza-list div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.section-pizza-list button{
+    margin-top: 10px;
+}
+.abc{
+    width: 600px;
+    height: 300px;
+    border: 1px solid blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

@@ -30,6 +30,15 @@ if ($conditionUrlGet) {
             case "disconnection":
                 $controller::disconnection();
                 break;
+            case "displayStock":
+                $controller::displayStock();
+                break;
+            case "displayCreateForm":
+                $controller::displayCreateForm();
+                break;
+            case "create":
+                $controller::create();
+                break;
             default:
                 $controller::displayDefault();
                 break;
@@ -45,6 +54,7 @@ if ($conditionUrlGet) {
                 break;
             case "update":
                 $controller::update();
+                break;
             default:
                 $controller::displayDefault();
                 break;
@@ -53,4 +63,4 @@ if ($conditionUrlGet) {
     else $controller::displayDefault();
 }
 else require_once("view/home.php");
-?>
+

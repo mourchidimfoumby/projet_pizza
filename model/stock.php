@@ -27,7 +27,7 @@ class stock extends objet{
             $this->seuil_stock = $seuil_stock;
         }
     }
-
+    
     public static function getAll($condition = NULL){
         $classeRecuperee = static::$classe;
         if($condition == NULL)

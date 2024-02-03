@@ -53,7 +53,8 @@ class gestionnaire
       // on récupère le tableau
       $gestionnaire = $resultat->fetchAll();
       // on retourne lefait que $tableau soit oui ou non de taille 1
-      return $gestionnaire;
+      if(!empty($gestionnaire)) return $gestionnaire;
+      else return null;
     } catch (PDOException $e) {
       echo $e->getMessage();
       return null;

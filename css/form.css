@@ -19,6 +19,7 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 .authentication-form div{
     display: flex;
@@ -28,22 +29,10 @@
 #link_gestionnaire{
     color: blue!important;
 }
-input {
-    padding: 8px;
-    margin-bottom: 16px!important;
-    border-radius: 4px;
-}
-
-form button {
+.authentication-form button {
     background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px!important;
-    cursor: pointer;
-    font-size: 16px;
 }
 
-form button:hover {
+.authentication-form button:hover {
     background-color: #45a049;
 }

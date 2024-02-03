@@ -13,6 +13,11 @@ class pizza extends objet{
     protected $prix_pizza;
     protected $pizza_du_moment;
 
+    protected static array $champs = array(
+        "nom_pizza" =>["text", "Nom de la pizza"],
+        "prix_pizza" =>["numbre", "Prix"]
+    );
+    
     public function __construct(
         $id_pizza = NULL,
         $nom_pizza = NULL,
@@ -49,6 +54,59 @@ class pizza extends objet{
     }
     public function __toString(): string{
         return strval($this->nom_pizza);
+    }
+
+    public static function create($donnees){
+        $identifiant = static::$identifiant;
+
+        $valuesSQL = function($values){
+            $result = "";
+            foreach($values as $val){
+                $result.= "'$val',";
+            }
+            $result = substr_replace($result, "", -1);
+            return $result;
+        };
+
+        $pizza = $donnees["pizza"];
+        $ingredients = $donnees["ingredient"];
+        $allergenes = $donnees["allergene"];
+
+        $pizzaClass = static::$classe;
+        $ingredientPizzaClass = "ingredient_pizza";
+        $allergenePizzaClass = "allergene_pizza";
+        
+        $pizzaColumns = implode(', ', array_keys($pizza));
+        $ingredientPizzaColumns = "id_pizza, id_ingredient, quantite_ingredient";
+        $allergenePizzaColumns = "id_pizza, id_allergene";
+
+        $pizzaRequest = "INSERT INTO $pizzaClass ($pizzaColumns)
+        VALUES(". $valuesSQL($pizza) .")";
+        $lastIdRequest = "SELECT MAX($identifiant) FROM $pizzaClass";
+        connexion::pdo()->query($pizzaRequest);
+        $resultLastId = connexion::pdo()->query($lastIdRequest);
+
+        $lastId = $resultLastId->fetchColumn();
+        $ingredientRequest = "";
+        $allergeneRequest = "";
+
+        foreach($ingredients as $id){
+            $ingredientRequest.= "INSERT INTO $ingredientPizzaClass ($ingredientPizzaColumns)
+            VALUES($lastId, $id, £££);";
+        }
+        foreach($allergenes as $id){
+            $allergeneRequest.= "INSERT INTO $allergenePizzaClass ($allergenePizzaColumns)
+            VALUES($lastId, $id, £££);";
+        }
+        $resultatIngredient = connexion::pdo()->prepare($ingredientRequest); 
+        $resultatAllergene = connexion::pdo()->prepare($allergeneRequest); 
+        try{
+            $resultatIngredient->execute();
+            $resultatAllergene->execute();
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
 }
 ?>

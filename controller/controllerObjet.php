@@ -1,12 +1,12 @@
 <?php
 
-abstract class controllerObjet{
+abstract class controllerObjet {
     protected static string $classe;
     protected static string $identifiant;
     protected static array $champs;
     // protected static array $tableauSelect;
 
-    public static function displayDefault(){
+    public static function displayDefault() {
         $classe = static::$classe;
         $title = ucfirst($classe);
         $objects = $classe::getAll();
@@ -18,11 +18,11 @@ abstract class controllerObjet{
         require_once("view/footer.html");
     }
 
-    public static function update(){
+    public static function update() {
         $classe = static::$classe;
         $donnees = array();
         $POST = array_diff_key($_POST, array("action" => ""));
-        foreach($POST as $name => $value){
+        foreach($POST as $name => $value) {
             $donnees[$name] = $value;
         }
         $idRecuperee = $_GET[static::$identifiant];
@@ -31,6 +31,18 @@ abstract class controllerObjet{
         exit();
     }
     
+    public static function create() {
+        $classe = static::$classe;
+        $donnees = array();
+        $POST = array_diff_key($_POST, array("action"));
+        foreach($POST as $key => $element){
+            $donnees[$key] = $element;
+        }
+        $classe::create($donnees);
+        header("location: index.php?objet=$classe");
+        exit();
+        }
+}
 
     // public static function displayOne(){
     //     $classeRecuperee = static::$classe;
@@ -71,19 +83,3 @@ abstract class controllerObjet{
     //     require_once("view/formulaireCreation.php");
     //     require_once("view/fin.php");
     // }
-
-    // public static function create(){
-    //     $champs = static::$champs;
-    //     $classe = static::$classe;
-    //     $donnees = array();
-    //     $GET = array_diff_key($_GET, array("objet" => "", "action" => ""));
-    //     foreach($GET as $key => $element){
-    //         $donnees[$key] = $element;
-    //     }
-    //     $classe::create($donnees);
-    //     self::displayAll();
-    // }
-
-}
-
-?>

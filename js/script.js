@@ -18,13 +18,16 @@ $(function () {
   }
 
   $(".bi-x").on("click", function(){
-    popup.close(objet)});
+    popup.close(objet)
+  });
 
   $("#popup-btn-add").on("click", function(){
-    cart.addPizza(parameters, id_pizza, objet)});
+    cart.addPizza(parameters, id_pizza, objet)
+  });
 
   $("#cart-item .bi-x-circle").on("click", function(){
-    cart.removeItem(this, parameters)});
+    cart.removeItem(this, parameters)
+  });
 
   $(".other-product").on("click", function (event) {
     event.preventDefault();
@@ -41,5 +44,9 @@ $(function () {
 
   $("#popup-ul-add").on("click", ".popup-list-add", function () {
     popup.addIngredient(this);
+  });
+
+  $(".popup-create-checkbox").on("click", function(event){
+      popup.selectElement(this, event);
   });
 });
