@@ -7,6 +7,8 @@ $objets = [
     "pizza",
     "dessert",
     "boisson",
+    "paiement",
+    "client"
 ];
 
 $conditionUrlGet = isset($_GET["objet"]) && in_array($_GET["objet"], $objets);
