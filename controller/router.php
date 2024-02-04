@@ -7,6 +7,7 @@ $objets = [
     "pizza",
     "dessert",
     "boisson",
+    "paiement",
     "client",
     "gestionnaire",
     "paiement",
@@ -29,6 +30,9 @@ if ($conditionUrlGet) {
         {
             case "disconnection":
                 $controller::disconnection();
+                break;
+            case "stockPizza":
+                $controller::stockPizza();
                 break;
             case "displayStock":
                 $controller::displayStock();
@@ -59,6 +63,12 @@ if ($conditionUrlGet) {
                 break;
             case "update":
                 $controller::update();
+            case "insertCartePaiement":
+                $controller::insertCartePaiement();
+                break;
+            case "create":
+                $controller::create();
+                break;
                 break;
             case "insertCartePaiement":
                 $controller::insertCartePaiement();

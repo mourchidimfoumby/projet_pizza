@@ -86,23 +86,3 @@ abstract class controllerObjet {
     //     require_once("view/formulaireCreation.php");
     //     require_once("view/fin.php");
     // }
-
-    public static function create(){
-        $classe = static::$classe;
-        $donnees = array();
-        $POST = array_diff_key($_POST, array("action"));
-        foreach($POST as $key => $element){
-            $donnees[$key] = $element;
-        }
-        $classe::create($donnees);
-        if($classe == "pizza"){
-            header("location: index.php?objet=$classe&action=stockPizza");
-        }else{
-            header("location: index.php?objet=$classe");
-        }
-        
-    }
-
-}
-
-?>

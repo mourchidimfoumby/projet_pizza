@@ -83,28 +83,4 @@ class controllerPizza extends controllerObjet
     //     $idPizza = $_POST["id"];
     //     $classe::unsetPizzaMoment($idPizza);
     // }
-
-        public static function stockPizza(){
-            $class = static::$classe;
-            $identifiant= static::$identifiant;
-            $action = "create";
-            $champs = static::$champs;
-            $pizzas= $class::getAll();
-            require_once("view/head.php");
-            require_once("view/popup.php");
-            require_once("view/navbar.php");
-            require_once("view/pizzaList.php");
-            require_once("view/footer.html");
-        }
-
-        public static function ingredientPizza(){
-            $classe = static::$classe;
-            $pizza = $classe::getIngredientList();
-            require_once("view/head.php");
-            require_once("view/navbar.php");
-            require_once("view/pizzaIngredientList.php");
-            require_once("view/footer.html");
-        }
-
-    }
-?>
+}
