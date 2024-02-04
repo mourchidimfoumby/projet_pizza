@@ -46,5 +46,4 @@ $(function () {
   $(".bi-star").on("click", function() {
     popup.addPizzaMoment(this);
   });
-  
 });

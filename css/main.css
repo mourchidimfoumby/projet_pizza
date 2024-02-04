@@ -7,7 +7,6 @@
 @import url("stock.css");
 @import url("statistiques.css");
 
-
 main{
     display: flex;
     flex-direction: row;

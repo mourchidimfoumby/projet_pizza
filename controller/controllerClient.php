@@ -11,39 +11,39 @@ class controllerClient extends controllerObjet
     //appele au formulaire
     public static function displayDefault()
     {
-        if(isset($_SESSION["client"])) {
+        if (isset($_SESSION["client"])) {
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/compte_client.php");
             require_once("view/footer.html");
-        }
-        else{
+        } else {
             require_once("view/head.php");
             require_once("view/navbar.php");
-            require_once("view/client_connection_form.html");
+            require_once("view/client_connection_form.php");
             require_once("view/footer.html");
         }
     }
 
     public static function connection()
     {
+        $authenticationError = false;
         $classe = static::$classe;
-        // Récupère les identifiants depuis la méthode POST
         $login = $_POST["mail_client"] ?? '';
         $mdp_client = $_POST["mdp_client"] ?? '';
 
         $client = $classe::connection($login, $mdp_client);
-        // Vérifie les identifiants avec la méthode checkMDP
         if (isset($client)) {
-            // Enregistre le login dans la session
             $_SESSION["client"] = $client;
-        } 
-        else {
-            header("Location: index.php?objet=erreur");
+            header("Location: index.php?objet=paiement");
             exit();
+        } else {
+            $authenticationError = true;
+            require_once("view/head.php");
+            require_once("view/navbar.php");
+            require_once("view/client_connection_form.php");
+            require_once("view/footer.html");
         }
     }
-
 
     public static function disconnection()
     {

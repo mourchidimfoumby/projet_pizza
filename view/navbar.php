@@ -35,7 +35,7 @@
                         </a>
                     </li>
                 </ul>
-            <?php endif; ?>
+                <?php endif; ?>
             </li>
         </ul>
     </nav>

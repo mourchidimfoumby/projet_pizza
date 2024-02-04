@@ -8,11 +8,12 @@ $objets = [
     "dessert",
     "boisson",
     "paiement",
-    "client"
+    "client",
+    "gestionnaire",
+    "stock",
+    "finance"
 ];
 
-$conditionUrlGet = isset($_GET["objet"]) && in_array($_GET["objet"], $objets);
-$conditionUrlPost = isset($_POST["objet"]) && in_array($_POST["objet"], $objets);
 $conditionUrlGet = isset($_GET["objet"]) && in_array($_GET["objet"], $objets);
 $conditionUrlPost = isset($_POST["objet"]) && in_array($_POST["objet"], $objets);
 //test pour savoir si un objet correct est passé dans l'url
