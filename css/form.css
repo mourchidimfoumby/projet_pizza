@@ -1,0 +1,30 @@
+.form-section {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin-top: 30px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+}
+.form-section form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.authentication-form div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#link_gestionnaire{
+    color: blue!important;
+}

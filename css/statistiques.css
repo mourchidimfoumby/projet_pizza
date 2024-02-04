@@ -1,0 +1,45 @@
+.div-stats {
+    background-color: rgb(246, 242, 242); 
+    border: 1px solid #100808; 
+    border-radius: 4px; 
+    padding: 16px; 
+    max-width: 400px; 
+    margin: 20px auto; 
+  }
+  
+.div-stats h1 {
+    text-align: center;
+    color: black!important;
+}
+
+.div-stats table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.div-stats th, .div-stats td {
+    border: 1px solid hsl(0, 39%, 5%);
+    padding: 8px;
+    text-align: center;
+}
+
+.div-stats th {
+    background-color: hsl(0, 56%, 4%);
+    font-weight: bold;
+}
+
+.div-stats tr:nth-child(even){background-color: #f9f9f9;}
+
+.div-stats tr:hover {background-color: #ddd;}
+
+.div-stats th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: rgb(184, 103, 12);
+    color: white;
+}
+
+  

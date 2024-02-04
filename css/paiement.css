@@ -1,0 +1,22 @@
+#main-payment{
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.section-payment-approve{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    background-color: white;
+    box-shadow: 2px 2px 2px lightgray;
+    color: black;
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.bi-check-circle-fill{
+    color: green;
+    font-size: 40px;
+}
