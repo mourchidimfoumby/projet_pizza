@@ -6,6 +6,7 @@
 @import url("home_gestionnaire.css");
 @import url("stock.css");
 @import url("pizza_list.css");
+@import url("statistiques.css");
 
 main{
     display: flex;

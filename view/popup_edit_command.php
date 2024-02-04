@@ -4,7 +4,7 @@ if(isset($_GET["id_pizza"])):
     $object = $classe::getOne($id_pizza);
     ?>
     <div id="popup-overlay">
-        <div class="popup-container">
+        <div class="popup-container-edit-command">
             <button class="bi bi-x"></button>
             <div id="popup-title">
                 <h2><?= $object ?></h2>

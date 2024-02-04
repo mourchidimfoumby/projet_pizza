@@ -1,6 +1,8 @@
 @import url("header.css");
 @import url("main.css");
 @import url("footer.css");
+@import url("paiement.css");
+/*@import url("pizzaList.css");*/
 /*
 =====================================================
                         GENERAL
@@ -27,7 +29,6 @@
     margin: 0px;
     font-family: 'Texte-regular';
 }
-
 li{
     list-style: none;
 }

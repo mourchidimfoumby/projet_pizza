@@ -45,6 +45,10 @@ export const popup = {
     $(itemList).appendTo("#popup-ul-remove");
   },
 
+  addPizzaMoment: function (){
+    //let 
+  },
+
   selectElementPizza: function(itemIngredient, event){
     let checkbox = $(itemIngredient).find(".myCheckBox");
     let inputQte = $(itemIngredient).find(".myCheckBox-qte");

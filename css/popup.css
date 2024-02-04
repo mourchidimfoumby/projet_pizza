@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
 }
-.popup-container{
+.popup-container-edit-command{
     display: flex;
     flex-direction: column;
     justify-content: space-between;

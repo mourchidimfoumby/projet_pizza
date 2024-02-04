@@ -1,5 +1,4 @@
 <?php
-
 require_once("config/connexion.php");
 connexion::connect();
 
@@ -8,6 +7,7 @@ $objets = [
     "pizza",
     "dessert",
     "boisson",
+    "paiement",
     "client",
     "gestionnaire",
     "stock",
@@ -29,6 +29,9 @@ if ($conditionUrlGet) {
         {
             case "disconnection":
                 $controller::disconnection();
+                break;
+            case "stockPizza":
+                $controller::stockPizza();
                 break;
             case "displayStock":
                 $controller::displayStock();
@@ -54,6 +57,12 @@ if ($conditionUrlGet) {
                 break;
             case "update":
                 $controller::update();
+            case "insertCartePaiement":
+                $controller::insertCartePaiement();
+                break;
+            case "create":
+                $controller::create();
+                break;
                 break;
             default:
                 $controller::displayDefault();

@@ -69,9 +69,9 @@ class client
       // on interprète le résultat selon la classe récupérée
       $resultat->setFetchmode(PDO::FETCH_CLASS, self::$classe);
       // on récupère le tableau
-      $objetClient = $resultat->fetchAll();
+      $client = $resultat->fetchAll();
       // on retourne lefait que $tableau soit oui ou non de taille 1
-      if(!empty($objetClient)) return $objetClient;
+      if(!empty($client)) return $client;
       else return null;
     } catch (PDOException $e) {
       echo $e->getMessage();

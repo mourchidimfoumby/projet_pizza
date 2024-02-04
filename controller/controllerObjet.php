@@ -11,7 +11,7 @@ abstract class controllerObjet {
         $title = ucfirst($classe);
         $objects = $classe::getAll();
         require_once("view/head.php");
-        require_once("view/popup_edit_commande.php");
+        require_once("view/popup_edit_command.php");
         require_once("view/navbar.php");
         require_once("view/products.php");
         require_once("view/cart.php");
@@ -31,18 +31,6 @@ abstract class controllerObjet {
         exit();
     }
     
-    public static function create() {
-        $classe = static::$classe;
-        $donnees = array();
-        $POST = array_diff_key($_POST, array("action"));
-        foreach($POST as $key => $element){
-            $donnees[$key] = $element;
-        }
-        $classe::create($donnees);
-        header("location: index.php?objet=$classe");
-        exit();
-        }
-}
 
     // public static function displayOne(){
     //     $classeRecuperee = static::$classe;
@@ -83,3 +71,23 @@ abstract class controllerObjet {
     //     require_once("view/formulaireCreation.php");
     //     require_once("view/fin.php");
     // }
+
+    public static function create(){
+        $classe = static::$classe;
+        $donnees = array();
+        $POST = array_diff_key($_POST, array("action"));
+        foreach($POST as $key => $element){
+            $donnees[$key] = $element;
+        }
+        $classe::create($donnees);
+        if($classe == "pizza"){
+            header("location: index.php?objet=$classe&action=stockPizza");
+        }else{
+            header("location: index.php?objet=$classe");
+        }
+        
+    }
+
+}
+
+?>

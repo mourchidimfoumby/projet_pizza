@@ -11,6 +11,12 @@
             <label for="manager_password">Mot de passe:</label>
             <input type="password" id="manager_password" name="mdp_gestionnaire" placeholder="Entrer mot de passe" required>
         </div>
+        <?php 
+            if(
+                isset($authenticationError) &&
+                $authenticationError
+            ) echo '<p style="color: red;"> Adresse mail ou mot de passe incorrect</p>'
+        ?>
         <button type="submit">Se connecter</button>
      </form>
 </section>
