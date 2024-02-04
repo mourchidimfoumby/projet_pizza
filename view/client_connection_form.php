@@ -9,6 +9,12 @@
             <label for="mdp">Mot de passe</label>
             <input type="password" name="mdp_client" placeholder="Entrer mot de passe" required>
         </div>
+        <?php 
+            if(
+                isset($authenticationError) &&
+                $authenticationError
+            ) echo '<p style="color: red;"> Adresse mail ou mot de passe incorrect</p>'
+        ?>
         <button type="submit">Se connecter</button>
     </form>
     <p>Pour les gestionnaires de la pizzeria,

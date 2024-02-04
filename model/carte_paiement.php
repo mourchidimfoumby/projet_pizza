@@ -1,5 +1,10 @@
 <?php
-class carte_paiement{
+
+require_once("objet.php");
+
+class carte_paiement extends objet{
+    protected static string $classe = "carte_paiement";
+  protected static string $identifiant = "numero_carte";
     //attributs
     protected $id_carte;
     protected $titulaire_carte;
@@ -8,10 +13,16 @@ class carte_paiement{
     protected $date_expiration;
     protected $id_client;
 
-  
-
     // constructeur
-    function __construct($id_carte=null, $titulaire_carte=null, $numero_carte=null, $cryptogramme=null, $date_expiration=null, $id_client=null){
+    function __construct
+    (
+        $id_carte=null,
+        $titulaire_carte=null,
+        $numero_carte=null, 
+        $cryptogramme=null, 
+        $date_expiration=null, 
+        $id_client=null
+    ){
         if(!is_null($id_carte)){
             $this->id_carte = $id_carte;
             $this->titulaire_carte= $titulaire_carte;
@@ -19,35 +30,6 @@ class carte_paiement{
             $this->cryptogramme= $cryptogramme;
             $this->date_expiration= $date_expiration;
             $this->id_client= $id_client;
-        }
-       
-    }
-
-    //méthode d'insertion
-    public static function insertion($donnees){
-        $columns = implode(', ', array_keys($donnees));
-        $values = array();
-        foreach($donnees as $val){
-            array_push($values, $val);
-        }
-        $valuesSQL = function($values){
-        $result = "";
-        foreach($values as $val){
-             $result.= "'$val',";
-        }
-            $result = substr_replace($result, "", -1);
-                return $result;
-            };
-
-        $requetePreparee = "INSERT INTO carte_paiement ($columns)
-        VALUES(". $valuesSQL($values) .")";
-        $resultat = connexion::pdo()->prepare($requetePreparee); 
-        try{
-             $resultat->execute();
-        }
-        catch(PDOException $e){
-        echo $e->getMessage();
-        echo $requetePreparee;
         }
     }
 
@@ -72,10 +54,6 @@ class carte_paiement{
         }
 
     }
-  
-
-    
-
 }
 
 ?>
