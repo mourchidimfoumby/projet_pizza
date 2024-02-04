@@ -31,7 +31,7 @@ abstract class controllerObjet {
         exit();
     }
     
-    public static function create() {
+    public static function create(){
         $classe = static::$classe;
         $donnees = array();
         $POST = array_diff_key($_POST, array("action"));
@@ -39,13 +39,16 @@ abstract class controllerObjet {
             $donnees[$key] = $element;
         }
         $classe::create($donnees);
-        header("location: index.php?objet=$classe");
-        exit();
+        if($classe == "pizza"){
+            header("location: index.php?objet=$classe&action=stockPizza");
+        }else{
+            header("location: index.php?objet=$classe");
         }
-}
-
+        
+    }
+    
     // public static function displayOne(){
-    //     $classeRecuperee = static::$classe;
+        //     $classeRecuperee = static::$classe;
     //     $tablesFem = array(
     //         "serie",
     //         "bd",
@@ -98,6 +101,8 @@ abstract class controllerObjet {
             header("location: index.php?objet=$classe");
         }
         
+    }
+
 }
 
 ?>
