@@ -9,29 +9,39 @@
 }
 .pizza-list{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: 1px solid lightgrey;
-    width: 50%;
+    width: 70%;
     padding: 16px;
     border-radius: 5px;
+    background-color: white;
+    gap: 10px;
+    position: relative;
+}
+.pizza-list img{
+    width: 100px;
+    height: 100px;
+}
+.pizza-list > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
 .prix-pizza {
-    font-size: 1.2rem;
+    font-size: 1rem!important;
     color: #e74c3c;
-}
-.pizza-list div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-self: flex-end;
+    margin: 0px!important;
 }
 .section-pizza-list button{
     margin-top: 10px;
 }
-.abc{
-    width: 600px;
-    height: 300px;
-    border: 1px solid blue;
+.logoIsMoment{
     position: absolute;
-    top: 50%;
-    left: 50%;
+    right: 16px;
+    top: 6px;
+    color: rgb(223, 180, 9);
+    font-size: 22px;
+    cursor: pointer;
 }

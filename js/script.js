@@ -1,5 +1,6 @@
 import {cart} from "./cart.js";
 import {popup} from "./popup.js";
+import {pizza} from "./pizza.js";
 
 $(function () {
   /*============= VARIABLE GLOBALES ==============*/
@@ -50,5 +51,9 @@ $(function () {
 
   $(".popup-create-checkbox").on("click", function(event){
       popup.selectElementPizza(this, event);
+  });
+  
+  $(".logoIsMoment").on("click", function(){
+    pizza.pizzaMoment(this);
   });
 });

@@ -70,8 +70,8 @@ export const cart = {
                 type: "POST",
                 url: "controller/treatment_cart.php",
                 data: {
-                action: "addPizzaToCart",
-                parameters: parameters,
+                    action: "addPizzaToCart",
+                    parameters: parameters,
                 },
                 dataType: "json",
                 })

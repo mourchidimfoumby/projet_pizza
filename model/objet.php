@@ -65,13 +65,7 @@ class objet{
         foreach($donnees as $column => $val){
             $requetePreparee .= "UPDATE $classeRecuperee SET $column = '$val' WHERE $identifiant = '$id';";
         }
-        $resultat = connexion::pdo()->prepare($requetePreparee); 
-        try{
-            $resultat->execute();
-        }
-        catch(PDOException $e){
-            echo $e->getMessage();
-        }
+        $resultat = connexion::pdo()->query($requetePreparee);
     }
 
     // public static function delete($id){

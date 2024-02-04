@@ -98,6 +98,7 @@
     right: 12px;
     top: 0;
     color: rgb(50,50,50) !important;
+    background: none!important;
 }
 .bi-plus-lg{
     color: darkgreen !important;
@@ -229,6 +230,6 @@
     cursor: pointer;
     pointer-events: none;
 }
-.bi-x{
-    background: none!important;
+.popup-create-container-checkbox p{
+    color: black;
 }
