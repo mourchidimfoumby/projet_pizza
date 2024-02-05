@@ -121,7 +121,12 @@
     text-align: center;
     margin: 0px!important;
     padding: 0px;
-    gap: 30px;
+    gap: 10px;
+}
+.popup-form div{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
 }
 .popup-div-input{
     display: flex;

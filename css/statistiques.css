@@ -33,8 +33,6 @@
 
 .div-stats tr:nth-child(even){background-color: #f9f9f9;}
 
-.div-stats tr:hover {background-color: #ddd;}
-
 .div-stats th {
     padding-top: 12px;
     padding-bottom: 12px;
