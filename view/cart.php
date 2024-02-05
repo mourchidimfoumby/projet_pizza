@@ -34,10 +34,12 @@
             }
             echo '
                 </div>
-                <button class="button-cart">
-                    <span class="text-center">Commander</span>
-                    <span class="text-end">'.number_format($totalPrice, 2).' €</span>
-                </button>';
+                <a href="index.php?objet=paiement">
+                    <button class="button-cart">
+                        <span class="text-center">Commander</span>
+                        <span class="text-end">'.number_format($totalPrice, 2).' €</span>
+                    </button>
+                </a>';
            
     }
 ?>

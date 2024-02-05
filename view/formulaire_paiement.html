@@ -1,0 +1,22 @@
+<section class="form-section">
+    <form method="post">
+        <input type="hidden" name="action" value="insertCartePaiement">
+
+        <label for="nom_titulaire">Nom du titulaire : </label>
+        <input type="text" id="nom_titulaire" name="nom_titulaire" required>
+
+        <label for="numero_carte">Numéro de carte : </label>
+        <input type="text" id="numero_carte" name="numero_carte" minlength="16" maxlength="16" required>
+
+        <label for="crypto_carte">Cryptogramme : </label>
+        <input type="text" id="crypto_carte" name="crypto_carte" minlength="3" maxlength="3" required>
+
+        <label for="date_expiration">Date d'expiration : </label>
+        <input type="date" id="date_expiration" name="date_expiration" required>
+
+        <button type="submit">Valider</button>
+    </form>
+</section>
+   
+
+    

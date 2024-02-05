@@ -7,41 +7,76 @@ header{
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: white;
 }
 header img{
-    padding: 10px;
-}
-#top-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    padding: 5px;
 }
 /*----------NAVBAR-------------*/
 nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background-color: rgb(30, 30, 30);
     box-shadow: 1px 1px 3px grey;
-}
-nav li{
-    font-size: 20px;
-    padding-block: 20px;
+    padding: 3px 10px;
 }
 nav ul{
     display: inline-flex;
     padding: 0px;
     margin: 0px;
+    position: relative;
+    align-items: center;
 }
 nav a{
     color: white;
-    padding: 20px;
+    font-size: 18px;
+    padding: 25.5px 20px;
 }
-nav li:hover{
+.nav-links-products:hover{
     background-color: rgb(184, 103, 12);
 }
+#nav-home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 #img-logo{
-    width: 10%;
-    height: 10%;
+    width: 70px;
+    height: 70px;
+}
+#links-home{
+    padding: 0px!important;
+    margin: 0px!important;
+}
+#links-home:hover{
+    background-color: rgb(40, 40, 40);
+}
+#nav-icon{
+    padding: 0px;
+    margin-inline: 20px;
+    margin-block: 0px!important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+#li-account{
+    margin: 0px;
+}
+
+
+nav .bi-person-fill{
+    font-size: 28px;
+}
+.link-account{
+    padding: 0px!important;
+    margin: 0px!important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.bi-box-arrow-right{
+    font-size: 24px;
 }

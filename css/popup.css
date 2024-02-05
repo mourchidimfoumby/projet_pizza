@@ -21,9 +21,15 @@
     padding: 20px;
     gap: 10px;
     min-width: 60%;
-    height: 70%;
+    height: 80vh;
     position: relative;
     overflow-y: auto;
+}
+.authentication-form button{
+    background-color: #4caf50;
+}
+.authentication-form button:hover {
+    background-color: #45a049;
 }
 #popup-table{
     border-collapse: collapse;
@@ -48,26 +54,6 @@
     padding: 0;
     height: 100%;
     overflow-y: auto;
-}
-#popup-table ul::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-#popup-table ul::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 5px;
-}
-
-/* Handle */
-#popup-table ul::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-}
-
-/* Handle on hover */
-#popup-table ul::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 #popup-title{
     display: flex;
@@ -98,6 +84,7 @@
     right: 12px;
     top: 0;
     color: rgb(50,50,50) !important;
+    background: none!important;
 }
 .bi-plus-lg{
     color: darkgreen !important;
@@ -108,4 +95,108 @@
 #total-price{
     margin-left: 15px !important;
     margin-right: 5px !important;
+}
+
+/*
+===================================================
+                    POPUP FORM  
+===================================================
+*/
+.popup-container-form{
+    gap: 0px!important;
+    height: max-content;
+    min-width: 60%;
+    max-width: max-content;
+}
+.popup-container-form h2{
+    margin-bottom: 20px;
+}
+.popup-form{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0px!important;
+    padding: 0px;
+    gap: 30px;
+}
+.popup-div-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    width: 80%;
+}
+.popup-form button{
+    background-color: rgb(184, 103, 12);
+}
+.popup-form button:hover{
+    background-color: rgb(155, 88, 12);;
+}
+.btn-submit{
+    width: 50%;
+}
+.popup-create-container-checkbox{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+}
+.popup-create-container-checkbox > div{
+    width: 100%;
+}
+.popup-create-container-checkbox > div p{
+    margin-bottom: 10px;
+}
+.popup-create-div-checkbox{
+    display: flex;
+    flex-direction: column;
+    max-height: 10rem;
+    overflow-y: auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.popup-create-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+    cursor: pointer;
+}
+.popup-create-checkbox:hover{
+    background-color: rgba(184, 104, 12, 0.1);
+}
+.popup-create-checkbox label{
+    cursor: pointer;
+    pointer-events: none;
+}
+.popup-create-checkbox div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.highlight {
+    background-color: rgba(184, 104, 12, 0.1);
+}
+.myCheckBox{
+    cursor: pointer;
+    pointer-events: none;
+}
+.myCheckBox:checked{
+    accent-color: rgb(184, 103, 12);
+}
+.myCheckBox-qte{
+    padding: 1px 3px!important;
+    width: 60px;
+    border: 1px solid lightgrey;
+}
+.myCheckBox-qte:disabled{
+    cursor: pointer;
+    pointer-events: none;
+}
+.popup-create-container-checkbox p{
+    color: black;
 }

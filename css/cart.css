@@ -3,7 +3,7 @@
     padding: 20px;
     border-radius: 20px;
     background-color: white;
-    height: 74vh;
+    height: 88vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,7 +11,7 @@
     flex-grow: 1;
     padding-inline: 5px;
     position: sticky;
-    top: 25.5vh;
+    top: 12vh;
 }
 .cart-container h2{
     text-align: center;

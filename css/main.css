@@ -1,12 +1,18 @@
-@import url(popup.css);
-@import url(products.css);
-@import url(cart.css);
-@import url(home.css);
+@import url("popup.css");
+@import url("products.css");
+@import url("cart.css");
+@import url("home.css");
+@import url("form.css");
+@import url("home_gestionnaire.css");
+@import url("paiement.css");
+@import url("pizza_list.css");
+@import url("stock.css");
+@import url("statistiques.css");
 
 main{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     background-color: whitesmoke;
-    min-height: 100vh;
+    min-height: 65vh;
 }
