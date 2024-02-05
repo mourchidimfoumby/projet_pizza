@@ -47,6 +47,15 @@ class pizza extends objet{
             echo $request;
         }
     }
+    public static function getAllergenesList($id){
+        $request = "";
+        $request .= "SELECT id_allergene, nom_allergene FROM pizza ";
+        $request .= "NATURAL JOIN allergene_pizza ";
+        $request .= "NATURAL JOIN allergene ";
+        $request .= "WHERE id_allergene = $id";
+        $result = connexion::pdo()->query($request);
+        return $result->fetchAll(PDO::FETCH_KEY_PAIR);
+    }
     public function __toString(): string{
         return strval($this->nom_pizza);
     }
