@@ -10,6 +10,18 @@ abstract class controllerObjet{
         $classe = static::$classe;
         $title = ucfirst($classe);
         $objects = $classe::getAll();
+        if(isset($_GET["id_pizza"])){
+            $id_pizza = $_GET["id_pizza"];
+            $object = $classe::getOne($id_pizza);
+            $condition = "modifiable = 1";
+            $ingredientsPizzaModifiable = $object->getIngredientList($id_pizza, $condition);
+            $ingredientsPizzaAll = $object->getIngredientList($id_pizza);
+            $ingredientsPizzaAll = implode(", ", $ingredientsPizzaAll);
+            $ingredientsModifiable = ingredient::getAll($condition);
+            $ingredientsModifiable = array_diff($ingredientsModifiable, $ingredientsPizzaModifiable);
+            $allergenesPizza = $classe::getAllergenesList($id_pizza);
+            $allergenesPizza = implode(", ", $allergenesPizza);
+        }
         require_once("view/head.php");
         require_once("view/popup_edit_commande.php");
         require_once("view/navbar.php");

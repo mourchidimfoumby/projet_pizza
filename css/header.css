@@ -19,7 +19,7 @@ nav{
     align-items: center;
     background-color: rgb(30, 30, 30);
     box-shadow: 1px 1px 3px grey;
-    padding: 3px 10px;
+    padding: 3px 15px;
 }
 nav ul{
     display: inline-flex;
