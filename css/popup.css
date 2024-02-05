@@ -58,6 +58,7 @@
 #popup-title{
     display: flex;
     flex-direction: column;
+    max-width: 80%;
 }
 .popup-list{
     border-bottom: 1px solid lightgrey;

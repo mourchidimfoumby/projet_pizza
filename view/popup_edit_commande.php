@@ -1,7 +1,5 @@
 <?php
 if(isset($_GET["id_pizza"])):
-    $id_pizza = $_GET["id_pizza"];
-    $object = $classe::getOne($id_pizza);
     ?>
     <div id="popup-overlay">
         <div class="popup-container">
@@ -10,14 +8,10 @@ if(isset($_GET["id_pizza"])):
                 <h2><?= $object ?></h2>
                 <?php
                 if($classe == "pizza"){
-                    $condition = "modifiable = 1";
-                    $ingredientsPizzaModifiable = $object->getIngredientList($id_pizza, $condition);
-                    $ingredientsPizzaAll = $object->getIngredientList($id_pizza);
-                    $ingredientsPizzaAll = implode(", ", $ingredientsPizzaAll);
                     echo '<p>' . $ingredientsPizzaAll . '</p>';
-
-                    $ingredientsModifiable = ingredient::getAll($condition);
-                    $ingredientsModifiable = array_diff($ingredientsModifiable, $ingredientsPizzaModifiable);
+                    if(!empty($allergenesPizza)){
+                        echo '<p style="color: darkred">'.$allergenesPizza.'</p>';
+                    }
                 };
             ?>
             </div>

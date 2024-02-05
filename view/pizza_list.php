@@ -15,7 +15,7 @@
             $isDuMoment = $pizza->get("pizza_du_moment") == 1;
             $ingredientsPizza = $pizza->getIngredientList($id);
             $ingredientsPizza = implode(", ", $ingredientsPizza);
-            $allergenesPizza = $pizza->getAllergenesList($id);
+            $allergenesPizza = $class::getAllergenesList($id);
             echo '<div class="pizza-list">';
             if($isDuMoment) echo '<span class="bi bi-star-fill logoIsMoment" data-id_pizza="'.$id.'"></span>';
             else echo '<span class="bi bi-star logoIsMoment" data-id_pizza="'.$id.'"></span>';
