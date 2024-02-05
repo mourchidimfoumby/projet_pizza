@@ -10,6 +10,7 @@ class controllerStatistiques
             $stat_Day = $classe::getCommand_Day();
             $stat_Month = $classe::getCommand_Month();
             $stat_Year = $classe::getCommand_Year();
+            $title = ucfirst($classe);
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/stat_Day.php");

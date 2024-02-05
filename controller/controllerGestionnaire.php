@@ -10,13 +10,16 @@ class controllerGestionnaire extends controllerObjet
 
     public static function displayDefault()
     {
+        $classe = static::$classe;
         if(isset($_SESSION["gestionnaire"])) {
+            $title = "Page $classe";
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/home_gestionnaire.php");
             require_once("view/footer.html");
         }
         else {
+            $title = "Connexion $classe";
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/gestionnaire_connection_form.php");

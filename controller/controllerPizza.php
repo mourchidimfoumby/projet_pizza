@@ -18,6 +18,7 @@ class controllerPizza extends controllerObjet
             $class = static::$classe;
             $identifiant = static::$identifiant;
             $pizzas = $class::getAll();
+            $title = "Stock $class";
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/pizza_list.php");
@@ -36,6 +37,7 @@ class controllerPizza extends controllerObjet
             $pizzas = $class::getAll();
             $ingredients = ingredient::getAll();
             $allergenes = allergene::getAll();
+            $title = "Stock $class";
             require_once("view/head.php");
             require_once("view/popup_create.php");
             require_once("view/navbar.php");

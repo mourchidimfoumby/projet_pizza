@@ -19,6 +19,7 @@ class controllerStock extends controllerObjet
             $identifiant = static::$identifiant;
             $champs = static::$champs;
             $objects = $classe::getAll();
+            $title = "Gestion des ".$classe."s";
             require_once("view/head.php");
             require_once("view/popup_edit.php");
             require_once("view/navbar.php");
