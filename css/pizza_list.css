@@ -5,6 +5,7 @@
     gap: 5px;
     padding: 16px;
 }
+
 .section-pizza-list a:first-child{
     align-self: start;
 }
@@ -23,15 +24,18 @@
     width: 100px;
     height: 100px;
 }
-.pizza-list > div{
+.div-info-pizza{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
 }
+.div-info-pizza p {
+    max-width: 80%;
+}
 .prix-pizza {
-    font-size: 1rem!important;
-    color: #e74c3c;
+    font-size: 1.1rem!important;
+    color: rgb(30,30,30);
     align-self: flex-end;
     margin: 0px!important;
 }
