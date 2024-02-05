@@ -8,6 +8,7 @@ class controllerPaiement extends controllerObjet{
  
     public static function displayDefault(){
         if(isset($_SESSION["client"])) {
+            $title = "Paiement";
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/formulaire_paiement.html");

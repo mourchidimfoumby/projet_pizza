@@ -10,12 +10,15 @@ class controllerClient extends controllerObjet
     //appele au formulaire
     public static function displayDefault()
     {
+        $classe = static::$classe;
         if (isset($_SESSION["client"])) {
+            $title = "Page $classe";
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/compte_client.php");
             require_once("view/footer.html");
         } else {
+            $title = "Connexion $classe";
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/client_connection_form.php");
