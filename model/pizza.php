@@ -52,7 +52,7 @@ class pizza extends objet{
         $request .= "SELECT id_allergene, nom_allergene FROM pizza ";
         $request .= "NATURAL JOIN allergene_pizza ";
         $request .= "NATURAL JOIN allergene ";
-        $request .= "WHERE id_allergene = $id";
+        $request .= "WHERE id_pizza = $id";
         $result = connexion::pdo()->query($request);
         return $result->fetchAll(PDO::FETCH_KEY_PAIR);
     }

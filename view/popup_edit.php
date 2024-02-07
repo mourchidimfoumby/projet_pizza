@@ -11,7 +11,7 @@ if(isset($_GET[$identifiant])):
             <input type="hidden" name="action"value="update">
                 <?php
                     foreach($champs as $champ => $details) {
-                        echo "<div>";
+                        echo '<div class="div-edit">';
                         echo '<label for="'.$champ.'">'.$details[1].'</label>';
                         if($champ != $identifiant)
                             echo '<input type="'.$details[0] .'" name="'.$champ .'" placeholder="'.$details[1] .'" value="'.$object->get($champ) .'" required>';
