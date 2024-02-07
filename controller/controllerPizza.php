@@ -64,14 +64,4 @@ class controllerPizza extends controllerObjet
         header("Location: index.php?objet=pizza&action=displayStock");
         exit();
     }
-    // public static function setPizzaMoment(){
-    //     $classe = static::$classe;
-    //     $idPizza = $_POST["id"];
-    //     $classe::setPizzaMoment($idPizza);
-    // }
-    // public static function unsetPizzaMoment(){
-    //     $classe = static::$classe;
-    //     $idPizza = $_POST["id"];
-    //     $classe::unsetPizzaMoment($idPizza);
-    // }
 }

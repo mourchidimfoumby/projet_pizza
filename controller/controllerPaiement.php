@@ -1,5 +1,6 @@
 <?php
 require_once("controller/controllerObjet.php");
+require_once("controller/controllerCommande.php");
 require_once("model/carte_paiement.php");
 
 class controllerPaiement extends controllerObjet{
@@ -43,6 +44,7 @@ class controllerPaiement extends controllerObjet{
         }
         require_once("view/head.php");
         require_once("view/payment-approve.html");
+        controllerCommande::create();
         unset($_SESSION["cart"]);
         echo "<script>
             setTimeout(function() {
@@ -51,6 +53,7 @@ class controllerPaiement extends controllerObjet{
         </script>";
         echo "</body>";
     }
+
 }
  
 ?>

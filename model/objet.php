@@ -2,9 +2,7 @@
 
 class objet{
     protected static string $identifiant;
-
     protected static string $classe;
-    // protected static $tableauSelect;
     public function get($attribut){
         return $this->$attribut;
     }
@@ -66,14 +64,18 @@ class objet{
             $result = substr_replace($result, "", -1);
             return $result;
         };
+        
         $requetePreparee = "INSERT INTO $classeRecuperee ($columns)
         VALUES(". $valuesSQL($values) .")";
+        
         $resultat = connexion::pdo()->prepare($requetePreparee); 
         try{
             $resultat->execute();
+            echo $requetePreparee;
         }
         catch(PDOException $e){
             echo $e->getMessage();
+            echo $requetePreparee;
         }
     }
 }

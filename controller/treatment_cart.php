@@ -59,6 +59,7 @@ function addProductToCart(){
         
         $price = $object->get("prix_$classe");
         $product = array(
+            "id" => $id,
             "name" => "$object",
             "price" => $price,
             "type" => $classe
@@ -117,6 +118,7 @@ function addPizzaToCart(){
 
         if(empty($ingredientsDifferents)){
             $product = array(
+                "id" => $id,
                 "name" => "$pizza",
                 "price" => $price,
                 "type" => $classe
@@ -128,6 +130,7 @@ function addPizzaToCart(){
                 $price += 3.00;
             }
             $product = array(
+                "id" => $id,
                 "name" => "$pizza",
                 "productPrice" => $productPrice,
                 "price" => $price,
