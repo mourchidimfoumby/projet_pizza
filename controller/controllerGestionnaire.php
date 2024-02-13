@@ -1,5 +1,6 @@
 <?php
 require_once("model/gestionnaire.php");
+require_once("model/alerte.php");
 require_once("controller/controllerObjet.php");
 
 class controllerGestionnaire extends controllerObjet
@@ -13,6 +14,7 @@ class controllerGestionnaire extends controllerObjet
         $classe = static::$classe;
         if(isset($_SESSION["gestionnaire"])) {
             $title = "Page $classe";
+            $alertes = alerte::getAll();
             require_once("view/head.php");
             require_once("view/navbar.php");
             require_once("view/home_gestionnaire.php");

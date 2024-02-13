@@ -13,18 +13,21 @@ class boisson extends objet
     protected $nom_boisson;
     protected $prix_boisson;
     protected $volume_boisson;
+    protected $image_boisson;
 
     public function __construct(
         $id_boisson = NULL,
         $nom_boisson = NULL,
         $prix_boisson = NULL,
         $volume_boisson = NULL,
+        $image_boisson = NULL,
     ) {
         if (!is_null($id_boisson)) {
             $this->id_boisson = $id_boisson;
             $this->nom_boisson = $nom_boisson;
             $this->prix_boisson = $prix_boisson;
             $this->volume_boisson = $volume_boisson;
+            $this->image_boisson = $image_boisson;
         }
     }
 

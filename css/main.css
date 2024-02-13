@@ -13,6 +13,9 @@ main{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: whitesmoke;
-    min-height: 65vh;
+    background-color: #382112;
+    min-height: 80vh;
+}
+section{
+    background-color: #382112!important;
 }

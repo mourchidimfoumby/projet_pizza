@@ -34,20 +34,22 @@
 
 #table-stock thead{
     padding-block: 10px;
-    background-color: rgb(184, 103, 12);
     color: whitesmoke;
 }
-
+#table-stock th{
+    background-color: #FE602B!important;
+}
 #table-stock th, #table-stock td{
     padding: 5px;
     border: 1px solid rgb(30,30,30);
     font-weight: 100;
+    background-color: white;
 }
 .tab-modify-stock{
-    background-color: rgb(80,80,80);
+    background-color: rgb(80,80,80)!important;
 }
 .tab-modify-stock:hover{
-    background-color: rgb(54, 54, 54);
+    background-color: rgb(54, 54, 54)!important;
 }
 .section-stock > a{
     width: max-content;
@@ -66,6 +68,9 @@
     background: none;
     color: rgb(30,30,30);
 }
+.bi-arrow-left{
+    color: whitesmoke;
+}
 .bi-arrow-left:hover{
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(30, 30, 30);
 }

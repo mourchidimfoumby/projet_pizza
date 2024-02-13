@@ -13,10 +13,7 @@
 <header>
     <nav>
         <a href="index.php" id="links-home">
-            <div id="nav-home">
                 <img src="https://projets.iut-orsay.fr/saes3-mmfoumb/mourchidi/pizza-4/media/pictures/5.png" id="img-logo">
-                <h1> Pizza Hub</h1>
-            </div>
         </a>
         <ul>
             <li><a href="index.php?objet=pizza" class="nav-links-products"> Pizzas</a></li>

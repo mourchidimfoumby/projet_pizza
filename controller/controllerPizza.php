@@ -4,6 +4,7 @@ require_once("model/ingredient.php");
 require_once("model/allergene.php");
 require_once("controller/controllerObjet.php");
 
+
 class controllerPizza extends controllerObjet
 {
     protected static string $classe = "pizza";

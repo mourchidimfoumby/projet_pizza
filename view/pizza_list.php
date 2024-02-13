@@ -3,9 +3,9 @@
         <button class="bi bi-arrow-left">Retour</button>
     </a>
     <div id="section-pizza-list-header">
-        <h2>Liste des pizzas</h2>
+        <h2 style="color: white!important">Liste des pizzas</h2>
         <a href="index.php?objet=pizza&action=displayCreateForm">
-            <button class="bi bi-plus">Nouvelle pizza</button>
+            <button style="color: white!important" class="bi bi-plus">Nouvelle pizza</button>
         </a>
     </div>
     <div>

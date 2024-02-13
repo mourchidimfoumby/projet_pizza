@@ -59,7 +59,7 @@ p{
     color: #6b6e79;
 }
 button {
-    background-color: rgb(184, 103, 12);;
+    background-color: #FFAC3D;
     color: #fff;
     padding: 10px;
     border: none;
@@ -68,7 +68,7 @@ button {
     font-size: 16px;
 }
 button:hover {
-    background-color: rgb(155, 88, 12);;
+    background-color: #e49731;
 }
 input {
     padding: 8px;

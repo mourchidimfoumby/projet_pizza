@@ -1,5 +1,5 @@
 <?php
-
+require_once("controller/controllerHome.php");
 require_once("config/connexion.php");
 connexion::connect();
 
@@ -13,7 +13,8 @@ $objets = [
     "stock",
     "finance",
     "paiement",
-    "statistiques"
+    "statistiques",
+    "alerte"
 ];
 
 $conditionUrlGet = isset($_GET["objet"]) && in_array($_GET["objet"], $objets);
@@ -70,5 +71,5 @@ if ($conditionUrlGet) {
     }
     else $controller::displayDefault();
 }
-else require_once("view/home.php");
+else controllerHome::showPizzaMoment();
 ?>

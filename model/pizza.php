@@ -13,11 +13,15 @@ class pizza extends objet{
     protected $prix_pizza;
     protected $pizza_du_moment;
 
+    protected $image_pizza;
+
+
     public function __construct(
         $id_pizza = NULL,
         $nom_pizza = NULL,
         $prix_pizza = NULL,
-        $pizza_du_moment = NULL
+        $pizza_du_moment = NULL,
+        $image_pizza = NULL
     ){
         if(!is_null($id_pizza))
         {
@@ -25,6 +29,7 @@ class pizza extends objet{
             $this->nom_pizza = $nom_pizza;
             $this->prix_pizza = $prix_pizza;
             $this->pizza_du_moment = $pizza_du_moment;
+            $this->image_pizza = $image_pizza;
         }
     }
     
@@ -55,6 +60,14 @@ class pizza extends objet{
         $request .= "WHERE id_pizza = $id";
         $result = connexion::pdo()->query($request);
         return $result->fetchAll(PDO::FETCH_KEY_PAIR);
+    }
+
+    public static function getPizzaMoment() {
+        $request = "SELECT nom_pizza, prix_pizza, image_pizza FROM pizza WHERE pizza_du_moment = 1";
+        $result = connexion::pdo()->prepare($request);
+        $result->execute();
+        $pizzaMoment = $result->fetchAll(PDO::FETCH_ASSOC);
+        return $pizzaMoment;
     }
     public function __toString(): string{
         return strval($this->nom_pizza);

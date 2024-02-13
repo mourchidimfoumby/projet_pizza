@@ -13,10 +13,12 @@ class controllerStatistiques
             $title = ucfirst($classe);
             require_once("view/head.php");
             require_once("view/navbar.php");
+            echo '<section class="section-stats">';
             require_once("view/stat_Day.php");
             require_once("view/stat_Month.php");
             require_once("view/stat_Year.php");
             require_once("view/footer.html");
+            echo '</section>';
         }
         else 
         {

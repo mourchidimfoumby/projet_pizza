@@ -1,10 +1,15 @@
+.section-stats{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 10px;
+    padding: 16px;
+}
 .div-stats {
     background-color: rgb(246, 242, 242); 
     border: 1px solid #100808; 
-    border-radius: 4px; 
-    padding: 16px; 
-    max-width: 400px; 
-    margin: 20px auto; 
+    border-radius: 4px;
+    padding: 16px;
   }
   
 .div-stats h1 {
@@ -36,7 +41,7 @@
 .div-stats th {
     padding-top: 12px;
     padding-bottom: 12px;
-    background-color: rgb(184, 103, 12);
+    background-color: #FE602B!important;
     color: white;
 }
 
