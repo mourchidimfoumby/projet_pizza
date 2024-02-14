@@ -1,0 +1,42 @@
+.section-client-page{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: white!important;
+    padding: 16px;
+    gap: 30px;
+}
+.head-client-page{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.head-client-page h2{
+    color: white!important;
+}
+.head-client-page h3{
+    color: white!important;
+}
+.head-client-page > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+.head-client-page .bi-person-fill{
+    font-size: 40px;
+}
+.body-client-page{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.body-client-page ul{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.body-client-page li{
+    font-size: 20px;
+}
