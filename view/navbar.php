@@ -13,7 +13,7 @@
 <header>
     <nav>
         <a href="index.php" id="links-home">
-                <img src="https://projets.iut-orsay.fr/saes3-mmfoumb/media/pictures/5.png" id="img-logo">
+            <img src="https://projets.iut-orsay.fr/saes3-mmfoumb/media/pictures/5.png" id="img-logo">
         </a>
         <ul>
             <li><a href="index.php?objet=pizza" class="nav-links-products"> Pizzas</a></li>

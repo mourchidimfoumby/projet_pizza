@@ -1,0 +1,45 @@
+.section-home{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#pizza_Moment{
+    width: 400px;
+    height: 400px;
+    margin-left: 320px;
+    max-width: 100%;     
+    margin: 20px 0; 
+}
+
+#hot{
+    display: flex;           
+    flex-direction: column;  
+    align-items: center;     
+    text-align: center;
+}
+
+#nom_pizza {
+    color: #ffffff !important;
+    font-family: 'Georgia', serif !important;
+    font-style: italic;
+    font-size: 4em !important;
+    margin-bottom: 30px;
+  }
+    
+#texte{
+    font-size: 5em;                     
+    font-weight: bold;
+    font-family: 'Georgia', serif !important;
+    font-style: italic !important;
+    margin-top: 40px;
+}
+
+#prix{
+    color: #ffffff !important;
+    font-size: 2em !important;
+    margin-bottom: 30px;
+}
+
+
+
