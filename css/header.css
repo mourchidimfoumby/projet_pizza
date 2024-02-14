@@ -1,0 +1,81 @@
+/*
+=====================================================
+                        HEADER
+=====================================================
+*/
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+header img{
+    padding: 5px;
+}
+/*----------NAVBAR-------------*/
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(#CF000A, #FE602B);
+    box-shadow: 1px 1px 3px black;
+    padding: 3px 30px;
+}
+nav ul{
+    display: inline-flex;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    align-items: center;
+}
+nav a{
+    color: white;
+    font-size: 18px;
+    padding: 26px 20px;
+}
+.nav-links-products:hover{
+    background-color: #EC391E;
+}
+
+#img-logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: white;
+}
+#img-logo:hover{
+    box-shadow: 2px 2px 2px black;
+}
+#links-home{
+    padding: 0px!important;
+    margin: 0px!important;
+}
+
+#nav-icon{
+    padding: 0px;
+    margin-inline: 20px;
+    margin-block: 0px!important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+#li-account{
+    margin: 0px;
+}
+
+
+nav .bi-person-fill{
+    font-size: 28px;
+}
+.link-account{
+    padding: 0px!important;
+    margin: 0px!important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.bi-box-arrow-right{
+    font-size: 24px;
+}
